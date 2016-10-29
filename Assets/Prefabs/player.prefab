@@ -60,7 +60,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010499562390}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.029999971, y: 0.45, z: -19.140026}
+  m_LocalPosition: {x: 0.00000023841858, y: 0.7422018, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -73,7 +73,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012708375984}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.161, y: -0.508, z: 0}
+  m_LocalPosition: {x: 1.877, y: -3.587, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -130,7 +130,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &61000014193758410
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -142,9 +142,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -0.006500125, y: -0.017875671}
+  m_Offset: {x: -0.006500125, y: -0.013798952}
   serializedVersion: 2
-  m_Size: {x: 0.124991685, y: 0.1802445}
+  m_Size: {x: 0.124991685, y: 0.17209122}
 --- !u!81 &81000013027679690
 AudioListener:
   m_ObjectHideFlags: 1
@@ -289,7 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21f2116f68fb0ef409f32f6e7247e1ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundCheckRadius: 0.25
+  groundCheckRadius: 104.9
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
@@ -345,7 +345,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: f36490a2d9461b142885cea31197d3e5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

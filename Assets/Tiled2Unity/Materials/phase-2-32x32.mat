@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Old
-  m_Shader: {fileID: 4800000, guid: cf5fd84d5967d15429b0d90fb61432f4, type: 3}
+  m_Name: phase-2-32x32
+  m_Shader: {fileID: 4800000, guid: 99fd33029232b8444a60a01e27b081ee, type: 3}
   m_ShaderKeywords: PIXELSNAP_ON
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
@@ -18,7 +18,7 @@ Material:
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 2800000, guid: a38a2e398d0a78f4a82c9b62f9230b16, type: 3}
+        m_Texture: {fileID: 2800000, guid: 15a64d778f572fa4a97ed19a238612a3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -26,9 +26,6 @@ Material:
         name: PixelSnap
       second: 1
     m_Colors:
-    - first:
-        name: _AlphaColorKey
-      second: {r: 0.6862745, g: 0.8, b: 0.9098039, a: 1}
     - first:
         name: _Color
       second: {r: 1, g: 1, b: 1, a: 1}
