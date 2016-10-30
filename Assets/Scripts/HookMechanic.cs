@@ -65,7 +65,7 @@ public class HookMechanic : MonoBehaviour {
             //Shoots ray to where mouse clicked and detects if it hits an object along the way
             hit = Physics2D.Raycast(transform.position, targetPos - transform.position, hook_length, mask);
 
-            if (hit.collider != null && hit.collider.gameObject.GetComponent<BoxCollider2D>() != null)
+            if (hit.collider != null && hit.collider.gameObject.GetComponent<Collider2D>() != null)
             {
                 joint.connectedAnchor = new Vector2(hit.point.x, hit.point.y);
 
