@@ -23,7 +23,7 @@ GameObject:
   - 23: {fileID: 23000011865044114}
   - 114: {fileID: 114000011425178228}
   - 114: {fileID: 114000013057553942}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: phase-2-32x32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010374411914}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile Layer 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011932649496}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile Layer 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ GameObject:
   - 23: {fileID: 23000010781937938}
   - 114: {fileID: 114000012981273404}
   - 114: {fileID: 114000011795697362}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: generic_platformer_tiles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   - 23: {fileID: 23000013512472258}
   - 114: {fileID: 114000012342132306}
   - 114: {fileID: 114000013766124420}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: goodly-2x
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,7 +250,7 @@ GameObject:
   - 23: {fileID: 23000010257341504}
   - 114: {fileID: 114000014095932546}
   - 114: {fileID: 114000014206981370}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: palm-tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +269,7 @@ GameObject:
   - 23: {fileID: 23000010624333584}
   - 114: {fileID: 114000013548524750}
   - 114: {fileID: 114000013683910612}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: goodly-2x
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,8 +285,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011786935620}
   - 114: {fileID: 114000010280517354}
-  - 68: {fileID: 68000012602005216}
-  m_Layer: 0
+  - 68: {fileID: 68000012950496014}
+  m_Layer: 8
   m_Name: level1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -876,7 +876,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012665699084}
   m_Mesh: {fileID: 4300008, guid: 694a5f919e02fc44dae19b3f939fcdfb, type: 3}
---- !u!68 &68000012602005216
+--- !u!68 &68000012950496014
 EdgeCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedX: 1.45
-  jumpHeight: 3.39
+  jumpHeight: 2.56
   player_Explosion: {fileID: 0}
   rightBullet: {fileID: 0}
   leftBullet: {fileID: 0}
@@ -289,7 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21f2116f68fb0ef409f32f6e7247e1ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundCheckRadius: 104.9
+  groundCheckRadius: 0.16
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
