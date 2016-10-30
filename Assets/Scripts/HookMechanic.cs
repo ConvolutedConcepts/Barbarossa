@@ -33,7 +33,7 @@ public class HookMechanic : MonoBehaviour {
     public bool descend;
 
     //Boolean value stating if hero has hooked to object;
-    public bool hooked;
+    private bool hooked;
 
 	// Use this for initialization
 	void Start () {
