@@ -91,7 +91,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010499562390}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.062498, z: -10}
+  m_LocalPosition: {x: -0, y: 6.25, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -105,7 +105,7 @@ Transform:
   m_GameObject: {fileID: 1000012708375984}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 19.6, y: -27.85, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: -0.8, y: 0.8, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000013815074000}
@@ -154,10 +154,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012708375984}
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 9.53
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 6
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -294,7 +294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   line: {fileID: 120000014288509222}
-  targetPos: {x: 54.137447, y: -23.412045, z: -9}
+  targetPos: {x: 57.005695, y: -6.565181, z: -9}
   mask:
     serializedVersion: 2
     m_Bits: 512
@@ -314,8 +314,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9707623ee31981a4aa6681fc9d01381a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedX: 5.45
-  jumpHeight: 7.5
+  speedX: 9.7
+  jumpHeight: 15.27
   player_Explosion: {fileID: 0}
   rightBullet: {fileID: 0}
   leftBullet: {fileID: 0}
@@ -395,8 +395,8 @@ LineRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 50.526623, y: -26.726921, z: 0}
-  - {x: 50.526157, y: -24.954744, z: 0}
+  - {x: 42.004868, y: -19.249277, z: 0}
+  - {x: 41.821724, y: -19.742174, z: 0}
   m_Parameters:
     startWidth: 1
     endWidth: 1
@@ -445,7 +445,7 @@ SpriteRenderer:
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: f36490a2d9461b142885cea31197d3e5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
 --- !u!232 &232000010586310352
 DistanceJoint2D:
@@ -461,7 +461,7 @@ DistanceJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 50.526157, y: -24.954744}
+  m_ConnectedAnchor: {x: 41.821724, y: -19.742174}
   m_AutoConfigureDistance: 1
-  m_Distance: 40
+  m_Distance: 0.17667808
   m_MaxDistanceOnly: 1
