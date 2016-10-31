@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: f36490a2d9461b142885cea31197d3e5
-timeCreated: 1477708661
+timeCreated: 1477854550
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 13}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -60,10 +60,10 @@ TextureImporter:
       name: pirate-sprite_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 101
-        width: 14
-        height: 22
+        x: 76
+        y: 1039
+        width: 153
+        height: 241
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -73,10 +73,10 @@ TextureImporter:
       name: pirate-sprite_1
       rect:
         serializedVersion: 2
-        x: 8
-        y: 69
-        width: 14
-        height: 23
+        x: 76
+        y: 692
+        width: 153
+        height: 252
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -86,10 +86,10 @@ TextureImporter:
       name: pirate-sprite_2
       rect:
         serializedVersion: 2
-        x: 8
-        y: 37
-        width: 14
-        height: 22
+        x: 76
+        y: 344
+        width: 153
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -99,10 +99,10 @@ TextureImporter:
       name: pirate-sprite_3
       rect:
         serializedVersion: 2
-        x: 8
-        y: 5
-        width: 14
-        height: 23
+        x: 76
+        y: 1
+        width: 153
+        height: 248
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

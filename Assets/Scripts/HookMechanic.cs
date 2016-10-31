@@ -49,9 +49,9 @@ public class HookMechanic : MonoBehaviour {
         joint.enableCollision = true;
         climb = false;
         descend = false;
-        hookSpeed = .1f;
-        minimumHookLength = .5f;
-        hook_length = 3;
+        //hookSpeed = .1f;
+        //minimumHookLength = .5f;
+        //hook_length = 3;
 	}
 
     // Update is called once per frame
