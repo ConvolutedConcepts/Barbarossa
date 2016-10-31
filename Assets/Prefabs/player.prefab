@@ -299,7 +299,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   hook_length: 30
-  hookSpeed: 10
+  hookSpeed: 0.5
   minimumHookLength: 0.5
   climb: 0
   descend: 0
