@@ -13,8 +13,8 @@ using System.Collections;
 public class HookMechanic : MonoBehaviour {
     public LineRenderer line;
     private DistanceJoint2D joint;
-    public Vector3 targetPos;
-    public RaycastHit2D hit;
+    private Vector3 targetPos;
+    private RaycastHit2D hit;
     public LayerMask mask;
 
     //Serves as maximum length for hook
@@ -27,13 +27,16 @@ public class HookMechanic : MonoBehaviour {
     public float minimumHookLength;
 
     //Boolean value to determine if hero has to climb rope still
-    public bool climb;
+    private bool climb;
 
     //Boolean value to determine if hero should descend down
-    public bool descend;
+    private bool descend;
 
     //Boolean value stating if hero has hooked to object;
     private bool hooked;
+
+    // Z Offset for line render
+    public float lineRendererZOffset = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -70,8 +73,7 @@ public class HookMechanic : MonoBehaviour {
                 joint.connectedAnchor = new Vector2(hit.point.x, hit.point.y);
 
                 //Set line for hook
-                line.SetPosition(0, transform.position);
-                line.SetPosition(1, hit.point);
+                setLinePosition(transform.position, hit.point);
 
                 float distance = Vector3.Distance(transform.position, hit.point);
 
@@ -144,5 +146,13 @@ public class HookMechanic : MonoBehaviour {
                 joint.distance = hook_length;
             joint.distance += hookSpeed;
         }
+    }
+
+    void setLinePosition(Vector3 pos0, Vector3 pos1)
+    {
+        Vector3 a = new Vector3(pos0.x, pos0.y, pos0.z + pos0.z + lineRendererZOffset);
+        Vector3 b = new Vector3(pos1.x, pos1.y, pos1.z + pos1.z + lineRendererZOffset);
+        line.SetPosition(0, a);
+        line.SetPosition(1, b);
     }
 }

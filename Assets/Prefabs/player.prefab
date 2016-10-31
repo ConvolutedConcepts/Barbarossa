@@ -294,15 +294,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   line: {fileID: 120000014288509222}
-  targetPos: {x: 57.005695, y: -6.565181, z: -9}
   mask:
     serializedVersion: 2
     m_Bits: 512
   hook_length: 30
   hookSpeed: 0.5
   minimumHookLength: 0.5
-  climb: 0
-  descend: 0
+  lineRendererZOffset: -0.88
 --- !u!114 &114000011120977260
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -395,11 +393,11 @@ LineRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 42.004868, y: -19.249277, z: 0}
-  - {x: 41.821724, y: -19.742174, z: 0}
+  - {x: 31.0059, y: -27.85155, z: 0}
+  - {x: 42.148758, y: -20.570353, z: -1.35}
   m_Parameters:
-    startWidth: 1
-    endWidth: 1
+    startWidth: 0.1
+    endWidth: 0.1
     m_StartColor:
       serializedVersion: 2
       rgba: 4294967295
@@ -453,7 +451,7 @@ DistanceJoint2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012708375984}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 0}
@@ -461,7 +459,7 @@ DistanceJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 41.821724, y: -19.742174}
+  m_ConnectedAnchor: {x: 42.148758, y: -20.570353}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.17667808
+  m_Distance: 23.69472
   m_MaxDistanceOnly: 1
