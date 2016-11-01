@@ -104,7 +104,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012708375984}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.6, y: -27.85, z: 0}
+  m_LocalPosition: {x: 44.006626, y: -27.851961, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -297,6 +297,8 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 512
+  hookSound: {fileID: 8300000, guid: b51a5b10b733ac840b01e8a61b656721, type: 3}
+  audioSource: {fileID: 82000010183505030}
   hook_length: 30
   hookSpeed: 0.5
   minimumHookLength: 0.5
@@ -369,14 +371,14 @@ LineRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010425348292}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: 32ae44dc711e39c478f4387cdb99e251, type: 2}
+  - {fileID: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -393,8 +395,8 @@ LineRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 33.996803, y: -27.851643, z: 0}
-  - {x: 42.20977, y: -20.773632, z: -0.88}
+  - {x: 43.868504, y: -25.734516, z: 0}
+  - {x: 43.31285, y: -24.838875, z: -0.88}
   m_Parameters:
     startWidth: 0.1
     endWidth: 0.1
@@ -451,7 +453,7 @@ DistanceJoint2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012708375984}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 0}
@@ -459,7 +461,7 @@ DistanceJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 42.20977, y: -20.773632}
+  m_ConnectedAnchor: {x: 43.31285, y: -24.838875}
   m_AutoConfigureDistance: 1
-  m_Distance: 23.691278
+  m_Distance: 0.7289548
   m_MaxDistanceOnly: 1

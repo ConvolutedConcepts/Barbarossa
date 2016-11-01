@@ -16,6 +16,8 @@ public class HookMechanic : MonoBehaviour {
     private Vector3 targetPos;
     private RaycastHit2D hit;
     public LayerMask mask;
+    public AudioClip hookSound;
+    public AudioSource audioSource;
 
     //Serves as maximum length for hook
     public float hook_length;
@@ -70,6 +72,7 @@ public class HookMechanic : MonoBehaviour {
 
             if (hit.collider != null && hit.collider.gameObject.GetComponent<Collider2D>() != null)
             {
+                audioSource.PlayOneShot(hookSound, 0.07f);
                 joint.connectedAnchor = new Vector2(hit.point.x, hit.point.y);
 
                 //Set line for hook
