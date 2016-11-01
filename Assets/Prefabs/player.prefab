@@ -443,7 +443,7 @@ SpriteRenderer:
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: f36490a2d9461b142885cea31197d3e5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
 --- !u!232 &232000010586310352
 DistanceJoint2D:
