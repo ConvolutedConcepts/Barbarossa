@@ -72,7 +72,7 @@ public class HookMechanic : MonoBehaviour {
 
             if (hit.collider != null && hit.collider.gameObject.GetComponent<Collider2D>() != null)
             {
-                audioSource.PlayOneShot(hookSound, 0.07f);
+                audioSource.PlayOneShot(hookSound, 0.7f);
                 joint.connectedAnchor = new Vector2(hit.point.x, hit.point.y);
 
                 //Set line for hook
