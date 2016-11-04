@@ -5,6 +5,7 @@ public class GroundChecker : MonoBehaviour {
 
 	public float groundCheckRadius;
 	public LayerMask whatIsGround;
+	public Transform feet;
 	private bool grounded;
 
 	// Use this for initialization
@@ -13,7 +14,7 @@ public class GroundChecker : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		grounded = Physics2D.OverlapCircle (gameObject.transform.position, groundCheckRadius, whatIsGround);
+		grounded = Physics2D.OverlapCircle (feet.position, groundCheckRadius, whatIsGround);
 	}
 	
 	// Update is called once per frame
