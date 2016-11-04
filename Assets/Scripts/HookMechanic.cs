@@ -45,7 +45,7 @@ public class HookMechanic : MonoBehaviour {
         //Call the function "reelIn" starting at time first arg and called every second arg
         InvokeRepeating("reelIn", 0.0f, .05f);
 
-        InvokeRepeating("reelDown", 0.0f, .05f);
+        //InvokeRepeating("reelDown", 0.0f, .05f);
         
         line.enabled = false;
         joint = GetComponent<DistanceJoint2D>();
@@ -83,7 +83,6 @@ public class HookMechanic : MonoBehaviour {
                 line.material.mainTextureScale = new Vector2(distance * 2, 1);
                 //line.material.SetTextureScale("_MainTex", new Vector2(transform.localScale.x, transform.localScale.y));
 
-                climb = true;
                 line.enabled = true;
                 joint.enabled = true;
                 float newHookLength = Vector2.Distance(transform.position, targetPos);
@@ -94,29 +93,14 @@ public class HookMechanic : MonoBehaviour {
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.W)) { climb = true; }
+
+        if(Input.GetKeyUp(KeyCode.W)) { climb = false; }
+
         //While hook is attached, update line(rope) to move with player
         if (joint.enabled == true)
         {
             line.SetPosition(0, transform.position);
-        }
-
-        //Left Click released. Stop climb
-        if (Input.GetKeyUp(KeyCode.Mouse0))
-        {
-            climb = false;
-        }
-
-        //Right click will start descent
-        if (Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            climb = false;
-            descend = true;
-        }
-
-        //Releasing right click will stop descent
-        if (Input.GetKeyUp(KeyCode.Mouse1))
-        {
-            descend = false;
         }
 
         //Space will disconnect hook;
@@ -140,16 +124,16 @@ public class HookMechanic : MonoBehaviour {
         }
     }
 
-    //Hero will descend down as long as descend is true and hook length doesnt extend past maximum
-    void reelDown()
-    {
-        if (descend && joint.distance < hook_length)
-        {
-            if (joint.distance + hookSpeed > hook_length)
-                joint.distance = hook_length;
-            joint.distance += hookSpeed;
-        }
-    }
+    ////Hero will descend down as long as descend is true and hook length doesnt extend past maximum
+    //void reelDown()
+    //{
+    //    if (descend && joint.distance < hook_length)
+    //    {
+    //        if (joint.distance + hookSpeed > hook_length)
+    //            joint.distance = hook_length;
+    //        joint.distance += hookSpeed;
+    //    }
+    //}
 
     void setLinePosition(Vector3 pos0, Vector3 pos1)
     {
