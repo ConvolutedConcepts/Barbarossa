@@ -82,6 +82,7 @@ public class PlayerManager : MonoBehaviour {
 		
 	// Update is called once per frame
 	void Update () {
+		anim.enabled = GameStatus.isGrounded;
 		Jet();
 		Flip ();
 		MovePlayer (speed);
