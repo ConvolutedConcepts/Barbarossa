@@ -87,14 +87,14 @@ public class PlayerManager : MonoBehaviour {
 		Flip ();
 		MovePlayer (speed);
 
-		leftKeyPressed = Input.GetKey(KeyCode.LeftArrow);
-		leftKeyReleased = Input.GetKeyUp(KeyCode.LeftArrow);
+		leftKeyPressed = Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A);
+		leftKeyReleased = Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A);
 
-		rightKeyPressed = Input.GetKey(KeyCode.RightArrow);
-		rightKeyReleased = Input.GetKeyUp(KeyCode.RightArrow);
+		rightKeyPressed = Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D);
+		rightKeyReleased = Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.D);
 
-        jumpButtonPressed = Input.GetKeyDown(KeyCode.UpArrow);
-		jumpButtonReleased = Input.GetKeyUp(KeyCode.UpArrow);
+        jumpButtonPressed = Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKey(KeyCode.Space);
+		jumpButtonReleased = Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.Space);
 
 		playerPosition = Player.transform;
 
