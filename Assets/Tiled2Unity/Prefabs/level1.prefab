@@ -232,6 +232,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000014162299978}
   - 68: {fileID: 68000014223447252}
+  - 68: {fileID: 68000011536773592}
   m_Layer: 0
   m_Name: Background Wall
   m_TagString: Untagged
@@ -681,7 +682,7 @@ EdgeCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 1440, y: -737}
   m_Points:
@@ -1109,6 +1110,22 @@ EdgeCollider2D:
   - {x: -23.996338, y: 7.0389404}
   - {x: -23.963623, y: 1.0239258}
   - {x: -23.18396, y: -4.352051}
+--- !u!68 &68000011536773592
+EdgeCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014286902248}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: fabc49fda0f624e4db267f1550f33f8b, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+  - {x: -0.5, y: 0}
+  - {x: 381.2041, y: -646.5076}
+  - {x: 383.95737, y: -967.7791}
 --- !u!68 &68000011605808492
 EdgeCollider2D:
   m_ObjectHideFlags: 1
