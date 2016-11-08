@@ -19,6 +19,10 @@ public class HookMechanic : MonoBehaviour {
     public AudioClip hookSound;
     public AudioSource audioSource;
 
+
+    public PlayerManager pm;    //
+    public HookMovement hm;     //
+
     //Serves as maximum length for hook
     public float hook_length;
 
@@ -57,6 +61,13 @@ public class HookMechanic : MonoBehaviour {
         //hookSpeed = .1f;
         //minimumHookLength = .5f;
         //hook_length = 3;
+
+
+        pm = GetComponent<PlayerManager>();
+        hm = GetComponent<HookMovement>();
+
+        pm.enabled = true;
+        hm.enabled = false;
 	}
 
     // Update is called once per frame
@@ -74,6 +85,10 @@ public class HookMechanic : MonoBehaviour {
             {
                 audioSource.PlayOneShot(hookSound, 0.7f);
                 joint.connectedAnchor = new Vector2(hit.point.x, hit.point.y);
+
+                pm.enabled = false; //
+                hm.enabled = true;  //
+                
 
                 //Set line for hook
                 setLinePosition(transform.position, hit.point);
@@ -104,12 +119,15 @@ public class HookMechanic : MonoBehaviour {
         }
 
         //Space will disconnect hook;
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && joint.enabled)
         {
             climb = false;
             descend = false;
             joint.enabled = false;
             line.enabled = false;
+
+            pm.enabled = true;  //
+            hm.enabled = false; //
         }
     }
 
