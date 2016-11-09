@@ -197,6 +197,7 @@ public class PlayerManager : MonoBehaviour {
 			Destroy(other.gameObject);
 			GameStatus.allowToFire = true;
 			GameStatus.isGunPickedUp = true;
+			return;
 		}
 			
 		if (other.gameObject.tag == "gem") {
@@ -204,10 +205,15 @@ public class PlayerManager : MonoBehaviour {
 			Destroy(other.gameObject);
 			GameStatus.score += 100;
 			scoreLabel.text = GameStatus.score.ToString ();
+			return;
 		}
 
-		if (other.gameObject.tag == "enemy" || other.gameObject.tag == "hazard") {
+		if (other.gameObject.tag == "enemy" ||
+			other.gameObject.tag == "hazard" ||
+			other.gameObject.layer == LayerMask.NameToLayer("Hazard")
+		) {
 			actionIfDead ();
+			return;
 		}
 
 		if (other.gameObject.tag == "key") {
@@ -215,19 +221,23 @@ public class PlayerManager : MonoBehaviour {
 			audio.PlayOneShot(gotKey, 0.7F);
 			hasKey = true;
 			Destroy(other.gameObject);
+			return;
 		}
 
 		if (other.gameObject.tag == "door" && hasKey == true) {
 			GoToNextLevel ();
+			return;
 		}
 
         if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             audio.PlayOneShot(jumpLandSound, 0.7F);
+			return;
         }
     }
 
 	void actionIfDead() {
+		print ("Dead");
 		//isPlayerAlive = false; //player will not get killed twice
 		isPlayerFrozen = true;
 		rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
