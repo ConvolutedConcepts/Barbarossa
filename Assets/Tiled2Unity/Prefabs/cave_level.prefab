@@ -96,6 +96,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1000012907548972
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000010809060774}
+  - 68: {fileID: 68000011888693236}
+  m_Layer: 0
+  m_Name: Abyss
+  m_TagString: Hazard
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1000013343564546
 GameObject:
   m_ObjectHideFlags: 1
@@ -177,6 +193,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000012107106812}
   m_RootOrder: 0
+--- !u!4 &4000010809060774
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012907548972}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3758, y: -752, z: 0}
+  m_LocalScale: {x: 20, y: 20, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000011624032922}
+  m_RootOrder: 2
 --- !u!4 &4000011065966202
 Transform:
   m_ObjectHideFlags: 1
@@ -203,6 +232,7 @@ Transform:
   m_Children:
   - {fileID: 4000010443069940}
   - {fileID: 4000012107106812}
+  - {fileID: 4000010809060774}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &4000012107106812
@@ -900,6 +930,21 @@ PolygonCollider2D:
       - {x: 3744, y: -672}
       - {x: 3744, y: -704}
       - {x: 3776, y: -704}
+--- !u!68 &68000011888693236
+EdgeCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012907548972}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+  - {x: -165.87344, y: 0.19547653}
+  - {x: 29.821533, y: 0}
 --- !u!114 &114000011600590564
 MonoBehaviour:
   m_ObjectHideFlags: 1
