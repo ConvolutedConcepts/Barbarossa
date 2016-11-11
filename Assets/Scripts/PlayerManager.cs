@@ -156,14 +156,14 @@ public class PlayerManager : MonoBehaviour {
 		
 	void GoToNextLevel() {
 		if (GameStatus.currentLevel == 1) {
-			SceneManager.LoadScene ("Level1_Complete");
+			SceneManager.LoadScene ("level2");
 		}
-		if (GameStatus.currentLevel == 2) {
-			SceneManager.LoadScene ("Level2_Complete");
-		}
-		if (GameStatus.currentLevel == 3) {
-			SceneManager.LoadScene ("Level3_Complete");
-		}
+		//if (GameStatus.currentLevel == 2) {
+		//	SceneManager.LoadScene ("Level2_Complete");
+		//}
+		//if (GameStatus.currentLevel == 3) {
+		//	SceneManager.LoadScene ("Level3_Complete");
+		//}
 	}
 
 	void RestartCurrentLevel() {
@@ -237,8 +237,7 @@ public class PlayerManager : MonoBehaviour {
 		}
 
 		if (other.gameObject.tag == "Door") {
-            loadLevel1();
-			//GoToNextLevel ();
+			GoToNextLevel ();
 			return;
 		}
 
