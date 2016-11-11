@@ -4,7 +4,9 @@ using System.Collections;
 public class HookMovement : MonoBehaviour {
 
     public Rigidbody2D rb;
-    public KeyCode lastKey;
+    private KeyCode lastKey;
+    private float drag = .5f;
+    private float hook_speed = 10f;
 
 	// Use this for initialization
 	void Start () {
@@ -13,24 +15,22 @@ public class HookMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (enabled) { rb.drag = .5f; }
+        if (enabled) { rb.drag = drag; }
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            if (lastKey != KeyCode.A)
+            if (rb.velocity.x < 0)
             {
-                print("Adding force to the left");
-                rb.velocity = new Vector2(-10f, 0);
+                rb.velocity = new Vector2(-hook_speed, 0);
                 lastKey = KeyCode.A;
             }
         }
 
         if (Input.GetKeyDown(KeyCode.D))
         {
-            if (lastKey != KeyCode.D)
+            if (rb.velocity.x > 0)
             {
-                print("Adding force to the right");
-                rb.velocity = new Vector2(10f, 0);
+                rb.velocity = new Vector2(hook_speed, 0);
                 lastKey = KeyCode.D;
             }
         }
