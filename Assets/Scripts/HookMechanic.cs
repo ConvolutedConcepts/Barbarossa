@@ -69,7 +69,7 @@ public class HookMechanic : MonoBehaviour {
         hooked = false;
         maxHookLength = 30;
         minimumHookLength = .5f;
-        reelSpeed = .1f;
+        reelSpeed = .2f;
         lineRendererZOffset = -1;
 
     }
@@ -118,15 +118,18 @@ public class HookMechanic : MonoBehaviour {
         if (joint.enabled == true){ line.SetPosition(0, transform.position); }
 
         //Space will disconnect hook;
-        if (joint.enabled && Input.GetKeyDown(KeyCode.Space))
-        {
-            climb = false;
-            joint.enabled = false;
-            line.enabled = false;
+        if (joint.enabled && Input.GetKeyDown(KeyCode.Space)) { disconnectHook();  }
 
-            pm.enabled = true;  //
-            hm.enabled = false; //
-        }
+    }
+
+    void disconnectHook()
+    {
+        climb = false;
+        joint.enabled = false;
+        line.enabled = false;
+
+        pm.enabled = true;  //
+        hm.enabled = false; //
     }
 
     //Cast ray for hook and return true only if it collides with a collider type component

@@ -4,14 +4,17 @@ using System.Collections;
 public class HookMovement : MonoBehaviour {
 
     public Rigidbody2D rb;
-    private KeyCode lastKey;
-    private float drag = .5f;
-    private float hook_speed = 10f;
+    private float drag;
+    private float maxSwingSpeed;
     public Vector2 null_speed = new Vector2(0, 0);
+    private float speedRampUp;
 
 	// Use this for initialization
 	void Start () {
         rb = GetComponent <Rigidbody2D>();
+        drag = .5f;
+        maxSwingSpeed = 20f;
+        speedRampUp = 7.5f;
 	}
 	
 	// Update is called once per frame
@@ -22,8 +25,11 @@ public class HookMovement : MonoBehaviour {
         {
             if (rb.velocity.x < 0 || rb.velocity == null_speed)
             {
-                rb.velocity = new Vector2(-hook_speed, 0);
-                lastKey = KeyCode.A;
+                rb.velocity = new Vector2(rb.velocity.x + -speedRampUp, 0);
+                if(rb.velocity.x < -maxSwingSpeed)
+                {
+                    rb.velocity = new Vector2(-maxSwingSpeed, 0);
+                }
             }
         }
 
@@ -31,8 +37,11 @@ public class HookMovement : MonoBehaviour {
         {
             if (rb.velocity.x >= 0 || rb.velocity == null_speed)
             {
-                rb.velocity = new Vector2(hook_speed, 0);
-                lastKey = KeyCode.D;
+                rb.velocity = new Vector2(rb.velocity.x + speedRampUp, 0);
+                if (rb.velocity.x > maxSwingSpeed)
+                {
+                    rb.velocity = new Vector2(maxSwingSpeed, 0);
+                }
             }
         }
 	}
