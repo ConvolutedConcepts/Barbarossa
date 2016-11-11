@@ -100,6 +100,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1000011516606824
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000010706226368}
+  - 68: {fileID: 68000010641703098}
+  m_Layer: 8
+  m_Name: seafloor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1000011557996074
 GameObject:
   m_ObjectHideFlags: 1
@@ -286,6 +302,19 @@ Transform:
   - {fileID: 4000011429473186}
   m_Father: {fileID: 4000011786935620}
   m_RootOrder: 0
+--- !u!4 &4000010706226368
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011516606824}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 226.3, y: -1120.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000014264884592}
+  m_RootOrder: 2
 --- !u!4 &4000010862334228
 Transform:
   m_ObjectHideFlags: 1
@@ -452,6 +481,7 @@ Transform:
   m_Children:
   - {fileID: 4000012146426890}
   - {fileID: 4000011323794860}
+  - {fileID: 4000010706226368}
   m_Father: {fileID: 4000011786935620}
   m_RootOrder: 2
 --- !u!23 &23000010257341504
@@ -734,6 +764,21 @@ BoxCollider2D:
   m_Offset: {x: 184.57767, y: -1057.9187}
   serializedVersion: 2
   m_Size: {x: 398.69547, y: 116.74252}
+--- !u!68 &68000010641703098
+EdgeCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011516606824}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+  - {x: -225.51266, y: 0.23999023}
+  - {x: 159.8285, y: 0.31530762}
 --- !u!68 &68000010797917690
 EdgeCollider2D:
   m_ObjectHideFlags: 1
@@ -800,7 +845,7 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 350, y: -1000}
   m_Points:
-  - {x: 1245.7579, y: 38.091858}
+  - {x: 1250.9054, y: 38.827087}
   - {x: 34.00482, y: 40.510803}
 --- !u!68 &68000013886945316
 EdgeCollider2D:
