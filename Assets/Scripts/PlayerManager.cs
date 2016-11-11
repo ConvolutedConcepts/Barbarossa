@@ -194,6 +194,11 @@ public class PlayerManager : MonoBehaviour {
 			actionIfDead ();
 			Destroy (c.gameObject);
 		}
+
+        if(c.gameObject.tag == "Hazard")
+        {
+            actionIfDead();
+        }
 	}
 
 	//If we touched ground allow jump and set the player to Idle mode
@@ -216,7 +221,7 @@ public class PlayerManager : MonoBehaviour {
 		}
 
 		if (other.gameObject.tag == "enemy" ||
-			other.gameObject.tag == "hazard" ||
+			other.gameObject.tag == "Hazard" ||
 			other.gameObject.layer == LayerMask.NameToLayer("Hazard")
 		) {
 			actionIfDead ();
@@ -245,34 +250,35 @@ public class PlayerManager : MonoBehaviour {
     }
 
 	void actionIfDead() {
-		print ("Dead");
-		//isPlayerAlive = false; //player will not get killed twice
-		isPlayerFrozen = true;
-		rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+        loadLevel1();
+		//print ("Dead");
+		////isPlayerAlive = false; //player will not get killed twice
+		//isPlayerFrozen = true;
+		//rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
 
-		audio.PlayOneShot(dead, 0.8F);
-		instantiateExplosion = (GameObject)	Instantiate (player_Explosion, playerPosition.position, Quaternion.identity);
-		Destroy (instantiateExplosion, 1.5f);
-		GameStatus.lives -= 1;
+		////audio.PlayOneShot(dead, 0.8F);
+		//instantiateExplosion = (GameObject)	Instantiate (player_Explosion, playerPosition.position, Quaternion.identity);
+		//Destroy (instantiateExplosion, 1.5f);
+		//GameStatus.lives -= 1;
 
-		if (GameStatus.lives == 2) {
-			live3.SetActive (false);
-			Invoke("RestartCurrentLevel", 1.5f );
-		}
-		else if (GameStatus.lives == 1) {
-			live2.SetActive (false);
-			Invoke("RestartCurrentLevel", 1.5f );
-		}
-		else if (GameStatus.lives == 0) {
-			live1.SetActive (false);
-			Invoke("RestartCurrentLevel", 1.5f );
-		}
-		else if (GameStatus.lives < 0) {
-			GameStatus.score = 0;
-			GameStatus.lives = 3;
-			GameStatus.currentLevel = 1;
-			StartCoroutine (ExitToMainMenu());			
-		}
+		//if (GameStatus.lives == 2) {
+		//	live3.SetActive (false);
+		//	Invoke("RestartCurrentLevel", 1.5f );
+		//}
+		//else if (GameStatus.lives == 1) {
+		//	live2.SetActive (false);
+		//	Invoke("RestartCurrentLevel", 1.5f );
+		//}
+		//else if (GameStatus.lives == 0) {
+		//	live1.SetActive (false);
+		//	Invoke("RestartCurrentLevel", 1.5f );
+		//}
+		//else if (GameStatus.lives < 0) {
+		//	GameStatus.score = 0;
+		//	GameStatus.lives = 3;
+		//	GameStatus.currentLevel = 1;
+		//	StartCoroutine (ExitToMainMenu());			
+		//}
 	}
 
     void loadLevel1()

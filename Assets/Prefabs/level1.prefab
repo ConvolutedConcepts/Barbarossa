@@ -179,7 +179,7 @@ GameObject:
   - 61: {fileID: 61000012857568848}
   m_Layer: 10
   m_Name: Abyss
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
