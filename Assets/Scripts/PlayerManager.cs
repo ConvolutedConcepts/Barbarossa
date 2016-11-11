@@ -38,6 +38,9 @@ public class PlayerManager : MonoBehaviour {
     bool isPlayerFrozen;
     bool needToZeroSpeed;
 
+    // Variable to allow jump after jump button is released
+    bool canJump;
+
     Animator anim;
     Rigidbody2D rb;
 
@@ -78,6 +81,8 @@ public class PlayerManager : MonoBehaviour {
 		needToZeroSpeed = false;
 
         rb.freezeRotation = true;
+
+        canJump = true; // Initial state is able to jump
 	}
 		
 	// Update is called once per frame
@@ -118,11 +123,13 @@ public class PlayerManager : MonoBehaviour {
 			LeftOrRightButtonGotReleased ();
 		}
 			
-		if (jumpButtonPressed) {
+		if (jumpButtonPressed && canJump) {
+            canJump = false;
             JumpButtonPressed ();
 		}
 
 		if (jumpButtonReleased) {
+            canJump = true;             // Allow Jump after button is released
 			JumpButtonReleased();
 		}
 	}
