@@ -231,8 +231,9 @@ public class PlayerManager : MonoBehaviour {
 			return;
 		}
 
-		if (other.gameObject.tag == "door" && hasKey == true) {
-			GoToNextLevel ();
+		if (other.gameObject.tag == "Door") {
+            loadLevel1();
+			//GoToNextLevel ();
 			return;
 		}
 
@@ -274,11 +275,12 @@ public class PlayerManager : MonoBehaviour {
 		}
 	}
 
-//	void loadLevel1() {
-//		SceneManager.LoadScene ("Level1");
-//	}
+    void loadLevel1()
+    {
+        SceneManager.LoadScene("Level1");
+    }
 
-	IEnumerator ExitToMainMenu() {
+    IEnumerator ExitToMainMenu() {
 		yield return new WaitForSeconds (2);
 		SceneManager.LoadScene ("Main_Menu");
 	}
