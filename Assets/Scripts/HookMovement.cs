@@ -7,6 +7,7 @@ public class HookMovement : MonoBehaviour {
     private KeyCode lastKey;
     private float drag = .5f;
     private float hook_speed = 10f;
+    public Vector2 null_speed = new Vector2(0, 0);
 
 	// Use this for initialization
 	void Start () {
@@ -19,7 +20,7 @@ public class HookMovement : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            if (rb.velocity.x < 0)
+            if (rb.velocity.x < 0 || rb.velocity == null_speed)
             {
                 rb.velocity = new Vector2(-hook_speed, 0);
                 lastKey = KeyCode.A;
@@ -28,7 +29,7 @@ public class HookMovement : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.D))
         {
-            if (rb.velocity.x > 0)
+            if (rb.velocity.x >= 0 || rb.velocity == null_speed)
             {
                 rb.velocity = new Vector2(hook_speed, 0);
                 lastKey = KeyCode.D;
