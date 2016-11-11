@@ -10,25 +10,29 @@ using System.Collections;
 
 //Change mask to default manually in unity
 
+//All lines followed by "//" should be moved to a management script for entire game to better seperate script functionality
+
 public class HookMechanic : MonoBehaviour {
     public LineRenderer line;
+
     private DistanceJoint2D joint;
     private Vector3 targetPos;
     private RaycastHit2D hit;
-    private Rigidbody2D rb;
     public LayerMask mask;
+
+    private Rigidbody2D rb; 
+
     public AudioClip hookSound;
     public AudioSource audioSource;
-
 
     public PlayerManager pm;    //
     public HookMovement hm;     //
 
     //Serves as maximum length for hook
-    public float hook_length;
+    public float maxHookLength;
 
     //Will determine how fast hero climbs up rope
-    public float hookSpeed;
+    public float reelSpeed;
 
     //The minimum length the hook will be while connected
     public float minimumHookLength;
@@ -36,81 +40,74 @@ public class HookMechanic : MonoBehaviour {
     //Boolean value to determine if hero has to climb rope still
     private bool climb;
 
-    //Boolean value to determine if hero should descend down
-    private bool descend;
-
     //Boolean value stating if hero has hooked to object;
     private bool hooked;
 
     // Z Offset for line render
-    public float lineRendererZOffset = 0;
+    public float lineRendererZOffset;
 
 	// Use this for initialization
 	void Start () {
-        //Call the function "reelIn" starting at time first arg and called every second arg
-        InvokeRepeating("reelIn", 0.0f, .05f);
-
-        //InvokeRepeating("reelDown", 0.0f, .05f);
+        setRepeatFunctions();
+        initDistanceJoint2d();
+        initLineRenderer();
+        initScriptVariables();
         
-        line.enabled = false;
+
+        //All below should be handeled in different script when possible
+        pm = GetComponent<PlayerManager>(); //
+        hm = GetComponent<HookMovement>(); //
+
+        pm.enabled = true; //
+        hm.enabled = false; //
+	}
+
+    //Initialize all variables used in this script
+    void initScriptVariables()
+    {
+        climb = false;
+        hooked = false;
+        maxHookLength = 30;
+        minimumHookLength = .5f;
+        reelSpeed = .1f;
+        lineRendererZOffset = -1;
+
+    }
+
+    //Set repeat on all functions that will need to be called at set time frames
+    void setRepeatFunctions()
+    {
+        InvokeRepeating("reelIn", 0.0f, .05f);
+    }
+
+    //Initialization for all values connected to DistanceJoint2d component
+    void initDistanceJoint2d()
+    {
         joint = GetComponent<DistanceJoint2D>();
-        rb = GetComponent<Rigidbody2D>();
         joint.enabled = false;
         joint.maxDistanceOnly = true;
         joint.enableCollision = true;
-        climb = false;
-        descend = false;
-        //hookSpeed = .1f;
-        //minimumHookLength = .5f;
-        //hook_length = 3;
+    }
 
-
-        pm = GetComponent<PlayerManager>();
-        hm = GetComponent<HookMovement>();
-
-        pm.enabled = true;
-        hm.enabled = false;
-	}
+    //Initialization for all value connected to LineRenderer component
+    void initLineRenderer()
+    {
+        line.enabled = false;
+    }
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            //Get world position of mouse click
-            targetPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1));
-
-            //Shoots ray to where mouse clicked and detects if it hits an object along the way
-            hit = Physics2D.Raycast(transform.position, targetPos - transform.position, hook_length, mask);
-
-            if (hit.collider != null && hit.collider.gameObject.GetComponent<Collider2D>() != null)
+            if (getRayCastHit())
             {
-                audioSource.PlayOneShot(hookSound, 0.7f);
-                joint.connectedAnchor = new Vector2(hit.point.x, hit.point.y);
-
                 pm.enabled = false; //
                 hm.enabled = true;  //
                 
-
-
-                //Set line for hook
-                setLinePosition(transform.position, hit.point);
-
-                float distance = Vector3.Distance(transform.position, hit.point);
-
-                line.material.mainTextureScale = new Vector2(distance * 2, 1);
-                //line.material.SetTextureScale("_MainTex", new Vector2(transform.localScale.x, transform.localScale.y));
-
-                line.enabled = true;
-                joint.enabled = true;
-                float newHookLength = Vector2.Distance(transform.position, targetPos);
-                if (newHookLength < minimumHookLength)
-                    joint.distance = minimumHookLength;
-                else
-                    joint.distance = newHookLength - 1;
+                setLine();
+                setHook();
             }
-
-            
         }
 
         if (Input.GetKeyDown(KeyCode.W)) { climb = true; }
@@ -118,16 +115,12 @@ public class HookMechanic : MonoBehaviour {
         if(Input.GetKeyUp(KeyCode.W)) { climb = false; }
 
         //While hook is attached, update line(rope) to move with player
-        if (joint.enabled == true)
-        {
-            line.SetPosition(0, transform.position);
-        }
+        if (joint.enabled == true){ line.SetPosition(0, transform.position); }
 
         //Space will disconnect hook;
         if (Input.GetKeyDown(KeyCode.Space) && joint.enabled)
         {
             climb = false;
-            descend = false;
             joint.enabled = false;
             line.enabled = false;
 
@@ -136,28 +129,66 @@ public class HookMechanic : MonoBehaviour {
         }
     }
 
+    //Cast ray for hook and return true only if it collides with a collider type component
+    bool getRayCastHit()
+    {
+        //Get world position of mouse click
+        targetPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1));
+
+        //Shoots ray to where mouse clicked and detects if it hits an object along the way
+        hit = Physics2D.Raycast(transform.position, targetPos - transform.position, maxHookLength, mask);
+
+        return hit.collider != null && hit.collider.gameObject.GetComponent<Collider2D>() != null;
+    }
+
+    //Set LineRenderer component with hit point from raycast
+    void setLine()
+    {
+        float distance = Vector3.Distance(transform.position, hit.point);
+
+        line.enabled = true;
+        setLinePosition(transform.position, hit.point);
+        line.material.mainTextureScale = new Vector2(distance * 2, 1);
+    }
+
+    //Set DistanceJoint2D component(hook) with hit point from raycast
+    void setHook()
+    {
+        joint.enabled = true;
+        joint.connectedAnchor = new Vector2(hit.point.x, hit.point.y);
+        setHookLength();
+
+        playHookSound();
+    }
+
+    //Play audio clip for hook
+    void playHookSound()
+    {
+        audioSource.PlayOneShot(hookSound, 0.7f);
+    }
+
+    //Set hook length to ensure it does not go farther than maximum hook length
+    void setHookLength()
+    {
+        float newHookLength = Vector2.Distance(transform.position, targetPos);
+        if (newHookLength < minimumHookLength)
+            joint.distance = minimumHookLength;
+        else
+            joint.distance = newHookLength - 1;
+    }
+
     //Reel in the hero till minimumHookLength is reached
     void reelIn()
     {
-        if(climb && joint.distance > minimumHookLength)
+        if (climb && joint.distance > minimumHookLength)
         {
-            if (joint.distance - hookSpeed < minimumHookLength)
+            if (joint.distance - reelSpeed < minimumHookLength)
                 joint.distance = minimumHookLength;
-            joint.distance -= hookSpeed;
+            joint.distance -= reelSpeed;
         }
     }
 
-    ////Hero will descend down as long as descend is true and hook length doesnt extend past maximum
-    //void reelDown()
-    //{
-    //    if (descend && joint.distance < hook_length)
-    //    {
-    //        if (joint.distance + hookSpeed > hook_length)
-    //            joint.distance = hook_length;
-    //        joint.distance += hookSpeed;
-    //    }
-    //}
-
+    //Sets the end points of the LineRenderer component
     void setLinePosition(Vector3 pos0, Vector3 pos1)
     {
         Vector3 a = new Vector3(pos0.x, pos0.y, pos0.z + pos0.z + lineRendererZOffset);
