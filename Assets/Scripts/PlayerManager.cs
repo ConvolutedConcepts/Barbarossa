@@ -315,17 +315,11 @@ public class PlayerManager : MonoBehaviour {
 
     public void JumpButtonPressed()
     {
-        print("jump button pressed");
-        print("groundedness"+GameStatus.isGrounded);
+        //print("jump button pressed");
+        //print("groundedness"+GameStatus.isGrounded);
         if (GameStatus.isGrounded)
         {
-            print("doing jump");
-            audio.PlayOneShot(jumpLaunchSound, 0.7F);
-            print("jump sound played");
-            anim.SetInteger("State", 1);
-            rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
-            //rb.AddForce(new Vector2(0, jumpHeight), ForceMode2D.Impulse); //Old Way
-            //rb.AddForce (new Vector2 (rb.velocity.x, jumpspeedY)); //another old way
+            jump();
 
         } else
         {
@@ -333,7 +327,18 @@ public class PlayerManager : MonoBehaviour {
         }
     }
 
-	public void GoToMainMenu() {
+    public void jump()
+    {
+        //print("doing jump");
+        audio.PlayOneShot(jumpLaunchSound, 0.7F);
+        //print("jump sound played");
+        anim.SetInteger("State", 1);
+        rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
+        //rb.AddForce(new Vector2(0, jumpHeight), ForceMode2D.Impulse); //Old Way
+        //rb.AddForce (new Vector2 (rb.velocity.x, jumpspeedY)); //another old way
+    }
+
+    public void GoToMainMenu() {
 		SceneManager.LoadScene ("Main_Menu");
 	}
 		

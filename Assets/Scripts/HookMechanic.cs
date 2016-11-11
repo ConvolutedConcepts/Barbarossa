@@ -12,6 +12,8 @@ using System.Collections;
 
 //All lines followed by "//" should be moved to a management script for entire game to better seperate script functionality
 
+//Manually drag in LineRenderer object to attach to gameobject with this script in unity
+
 public class HookMechanic : MonoBehaviour {
     public LineRenderer line;
 
@@ -67,7 +69,7 @@ public class HookMechanic : MonoBehaviour {
     {
         climb = false;
         hooked = false;
-        maxHookLength = 30;
+        maxHookLength = 15;
         minimumHookLength = .5f;
         reelSpeed = .2f;
         lineRendererZOffset = -1;
@@ -130,9 +132,12 @@ public class HookMechanic : MonoBehaviour {
 
         pm.enabled = true;  //
         hm.enabled = false; //
+
+        pm.jump();
+        
     }
 
-    //Cast ray for hook and return true only if it collides with a collider type component
+    //Cast ray for hook and return true only ifS it collides with a collider type component
     bool getRayCastHit()
     {
         //Get world position of mouse click
@@ -177,7 +182,7 @@ public class HookMechanic : MonoBehaviour {
         if (newHookLength < minimumHookLength)
             joint.distance = minimumHookLength;
         else
-            joint.distance = newHookLength - 1;
+            joint.distance = newHookLength - .5f ;
     }
 
     //Reel in the hero till minimumHookLength is reached
@@ -194,8 +199,8 @@ public class HookMechanic : MonoBehaviour {
     //Sets the end points of the LineRenderer component
     void setLinePosition(Vector3 pos0, Vector3 pos1)
     {
-        Vector3 a = new Vector3(pos0.x, pos0.y, pos0.z + pos0.z + lineRendererZOffset);
-        Vector3 b = new Vector3(pos1.x, pos1.y, pos1.z + pos1.z + lineRendererZOffset);
+        Vector3 a = new Vector3(pos0.x, pos0.y, pos0.z + lineRendererZOffset);
+        Vector3 b = new Vector3(pos1.x, pos1.y, pos1.z + lineRendererZOffset);
         line.SetPosition(0, a);
         line.SetPosition(1, b);
     }
