@@ -118,7 +118,7 @@ public class HookMechanic : MonoBehaviour {
         if (joint.enabled == true){ line.SetPosition(0, transform.position); }
 
         //Space will disconnect hook;
-        if (Input.GetKeyDown(KeyCode.Space) && joint.enabled)
+        if (joint.enabled && Input.GetKeyDown(KeyCode.Space))
         {
             climb = false;
             joint.enabled = false;
