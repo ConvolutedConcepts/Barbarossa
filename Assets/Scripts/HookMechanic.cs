@@ -15,6 +15,7 @@ public class HookMechanic : MonoBehaviour {
     private DistanceJoint2D joint;
     private Vector3 targetPos;
     private RaycastHit2D hit;
+    private Rigidbody2D rb;
     public LayerMask mask;
     public AudioClip hookSound;
     public AudioSource audioSource;
@@ -53,6 +54,7 @@ public class HookMechanic : MonoBehaviour {
         
         line.enabled = false;
         joint = GetComponent<DistanceJoint2D>();
+        rb = GetComponent<Rigidbody2D>();
         joint.enabled = false;
         joint.maxDistanceOnly = true;
         joint.enableCollision = true;
@@ -90,6 +92,7 @@ public class HookMechanic : MonoBehaviour {
                 hm.enabled = true;  //
                 
 
+
                 //Set line for hook
                 setLinePosition(transform.position, hit.point);
 
@@ -104,8 +107,10 @@ public class HookMechanic : MonoBehaviour {
                 if (newHookLength < minimumHookLength)
                     joint.distance = minimumHookLength;
                 else
-                    joint.distance = newHookLength;
+                    joint.distance = newHookLength - 1;
             }
+
+            
         }
 
         if (Input.GetKeyDown(KeyCode.W)) { climb = true; }
