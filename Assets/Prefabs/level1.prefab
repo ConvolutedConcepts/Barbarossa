@@ -22,6 +22,7 @@ GameObject:
   - 68: {fileID: 68000013808379112}
   - 68: {fileID: 68000014109582130}
   - 68: {fileID: 68000012060078472}
+  - 68: {fileID: 68000010792963168}
   m_Layer: 8
   m_Name: Surfaces
   m_TagString: Untagged
@@ -780,7 +781,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 1392, y: -635}
   serializedVersion: 2
-  m_Radius: 25.15
+  m_Radius: 23.16
 --- !u!61 &61000010501689654
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -824,6 +825,23 @@ EdgeCollider2D:
   m_Points:
   - {x: -225.51266, y: 0.23999023}
   - {x: 159.8285, y: 0.31530762}
+--- !u!68 &68000010792963168
+EdgeCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010078261762}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: fabc49fda0f624e4db267f1550f33f8b, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 1431, y: -723.7}
+  m_Points:
+  - {x: 12.1345215, y: -107.39258}
+  - {x: 6.418457, y: -44.223694}
+  - {x: -19.589844, y: -42.431885}
+  - {x: -22.39978, y: -14.213745}
 --- !u!68 &68000010797917690
 EdgeCollider2D:
   m_ObjectHideFlags: 1
@@ -855,14 +873,12 @@ EdgeCollider2D:
   m_GameObject: {fileID: 1000010078261762}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: e9231145b47235c4a9d0640d981de94d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 2000, y: -735}
   m_Points:
   - {x: -590.9319, y: -1.6045532}
-  - {x: -123.6156, y: -1.9086304}
-  - {x: 0.95495605, y: -2.4176025}
   - {x: 167.36157, y: -1.6045532}
 --- !u!68 &68000013053044224
 EdgeCollider2D:
