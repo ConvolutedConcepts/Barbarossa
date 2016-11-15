@@ -8,12 +8,6 @@ public class PlayerMovement : MonoBehaviour
     public float speedX = 9.7f;
     public float jumpHeight = 15.27f;
 
-    Transform playerPosition;
-
-
-    private GameObject Player;
-
-
     bool facingRight;
     float speed;
 
@@ -39,18 +33,11 @@ public class PlayerMovement : MonoBehaviour
     public AudioClip jumpLaunchSound;
     public AudioClip jumpLandSound;
     new AudioSource audio;
-
-    private Vector3 spown;
-
-    void Awake()
-    {
-        Player = gameObject;
-    }
+    
 
     // Use this for initialization
     void Start()
     {
-        spown = transform.position;
         audio = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -96,7 +83,6 @@ public class PlayerMovement : MonoBehaviour
         Flip();
         MovePlayer(speed);
 
-        playerPosition = Player.transform;
     }
 
     private bool getKeyPress()
