@@ -65,7 +65,7 @@ public class PlayerManager : MonoBehaviour
 
         rb.freezeRotation = true;
 
-        pm = new global::PlayerMovement(audio, anim, ref rb, transform);
+        pm = new global::PlayerMovement(audio, anim, ref rb, transform, jumpLaunchSound, jumpLandSound);
         hm = GetComponent<HookMovement>(); //
         joint = GetComponent<DistanceJoint2D>();
 

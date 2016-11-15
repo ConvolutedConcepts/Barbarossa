@@ -30,20 +30,22 @@ public class PlayerMovement
     Rigidbody2D rb;
 
     //Sounds 
-    public AudioClip jumpLaunchSound;
-    public AudioClip jumpLandSound;
+    private AudioClip jumpLaunchSound;
+    private AudioClip jumpLandSound;
     private AudioSource audio;
 
     private Transform transform;
     
 
     // Use this for initialization
-    public PlayerMovement(AudioSource audio, Animator anim, ref Rigidbody2D rb, Transform transform)
+    public PlayerMovement(AudioSource audio, Animator anim, ref Rigidbody2D rb, Transform transform, AudioClip jumpLaunchSound, AudioClip jumpLandSound)
     {
         this.audio = audio;
         this.anim = anim;
         this.rb = rb;
         this.transform = transform;
+        this.jumpLaunchSound = jumpLaunchSound;
+        this.jumpLandSound = jumpLandSound;
 
         facingRight = true;
 

@@ -80,7 +80,6 @@ GameObject:
   - 232: {fileID: 232000010586310352}
   - 114: {fileID: 114000010051379028}
   - 114: {fileID: 114000012846182022}
-  - 114: {fileID: 114000013176277760}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -390,21 +389,6 @@ MonoBehaviour:
   drag: 0
   maxSwingSpeed: 0
   speedRampUp: 0
---- !u!114 &114000013176277760
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012708375984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4863ecd0ec9227e41bb24e3d149ad942, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speedX: 9.7
-  jumpHeight: 15.27
-  jumpLaunchSound: {fileID: 8300000, guid: 6b01ec89375e2d9449bf3a89bfaa5a2f, type: 3}
-  jumpLandSound: {fileID: 8300000, guid: e5102d8c2a195fc4bb784786bab25e69, type: 3}
 --- !u!114 &114000013777652332
 MonoBehaviour:
   m_ObjectHideFlags: 1
