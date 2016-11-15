@@ -80,6 +80,8 @@ GameObject:
   - 232: {fileID: 232000010586310352}
   - 114: {fileID: 114000010051379028}
   - 114: {fileID: 114000012846182022}
+  - 114: {fileID: 114000013176277760}
+  - 114: {fileID: 114000011499149004}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -329,8 +331,6 @@ MonoBehaviour:
     m_Bits: 768
   hookSound: {fileID: 8300000, guid: b51a5b10b733ac840b01e8a61b656721, type: 3}
   audioSource: {fileID: 82000010183505030}
-  pm: {fileID: 0}
-  hm: {fileID: 0}
   maxHookLength: 0
   reelSpeed: 0
   minimumHookLength: 0.5
@@ -346,8 +346,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9707623ee31981a4aa6681fc9d01381a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedX: 9.7
-  jumpHeight: 15.27
   player_Explosion: {fileID: 0}
   rightBullet: {fileID: 0}
   leftBullet: {fileID: 0}
@@ -363,6 +361,21 @@ MonoBehaviour:
   walking: {fileID: 0}
   falling: {fileID: 0}
   dead: {fileID: 0}
+--- !u!114 &114000011499149004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012708375984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4863ecd0ec9227e41bb24e3d149ad942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedX: 9.7
+  jumpHeight: 15.27
+  jumpLaunchSound: {fileID: 8300000, guid: 6b01ec89375e2d9449bf3a89bfaa5a2f, type: 3}
+  jumpLandSound: {fileID: 8300000, guid: e5102d8c2a195fc4bb784786bab25e69, type: 3}
 --- !u!114 &114000011762832702
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -390,8 +403,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dfb3ab045cfd6b448b0301cdcc5b01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  null_speed: {x: 0, y: 0}
+  drag: 0
+  maxSwingSpeed: 0
+  speedRampUp: 0
+--- !u!114 &114000013176277760
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012708375984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4863ecd0ec9227e41bb24e3d149ad942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedX: 9.7
+  jumpHeight: 15.27
+  jumpLaunchSound: {fileID: 8300000, guid: 6b01ec89375e2d9449bf3a89bfaa5a2f, type: 3}
+  jumpLandSound: {fileID: 8300000, guid: e5102d8c2a195fc4bb784786bab25e69, type: 3}
 --- !u!114 &114000013777652332
 MonoBehaviour:
   m_ObjectHideFlags: 1

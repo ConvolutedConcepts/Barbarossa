@@ -27,8 +27,8 @@ public class HookMechanic : MonoBehaviour {
     public AudioClip hookSound;
     public AudioSource audioSource;
 
-    public PlayerManager pm;    //
-    public HookMovement hm;     //
+    private PlayerMovement pm;    //
+    private HookMovement hm;     //
 
     //Serves as maximum length for hook
     public float maxHookLength;
@@ -57,7 +57,7 @@ public class HookMechanic : MonoBehaviour {
         
 
         //All below should be handeled in different script when possible
-        pm = GetComponent<PlayerManager>(); //
+        pm = GetComponent<PlayerMovement>(); //
         hm = GetComponent<HookMovement>(); //
 
         pm.enabled = true; //

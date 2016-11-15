@@ -3,11 +3,11 @@ using System.Collections;
 
 public class HookMovement : MonoBehaviour {
 
-    public Rigidbody2D rb;
-    private float drag;
-    private float maxSwingSpeed;
-    public Vector2 null_speed = new Vector2(0, 0);
-    private float speedRampUp;
+    private Rigidbody2D rb;
+    public float drag;
+    public float maxSwingSpeed;
+    private Vector2 null_speed = new Vector2(0, 0);
+    public float speedRampUp;
 
 	// Use this for initialization
 	void Start () {
