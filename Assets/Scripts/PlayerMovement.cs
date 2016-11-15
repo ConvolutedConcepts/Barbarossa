@@ -140,4 +140,13 @@ public class PlayerMovement : MonoBehaviour
         audio.PlayOneShot(jumpLaunchSound, 0.7F);
         rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
     }
+
+    void OnCollisionEnter2D(Collision2D other) { 
+
+        if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
+            {
+                audio.PlayOneShot(jumpLandSound, 0.7F);
+                return;
+            }
+    }
 }

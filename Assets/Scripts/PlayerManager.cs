@@ -131,11 +131,6 @@ public class PlayerManager : MonoBehaviour
             return;
         }
 
-        if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
-        {
-            audio.PlayOneShot(jumpLandSound, 0.7F);
-            return;
-        }
     }
 
     void actionIfDead()
