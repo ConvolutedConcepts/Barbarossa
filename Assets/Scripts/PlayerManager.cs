@@ -42,6 +42,11 @@ public class PlayerManager : MonoBehaviour
 
     private Vector3 spown;
 
+
+    private PlayerMovement pm;    //
+    private HookMovement hm;     //
+    private DistanceJoint2D joint;
+
     void Awake()
     {
         Player = gameObject;
@@ -60,6 +65,13 @@ public class PlayerManager : MonoBehaviour
 
         rb.freezeRotation = true;
 
+        pm = new global::PlayerMovement(audio, anim, ref rb, transform);
+        hm = GetComponent<HookMovement>(); //
+        joint = GetComponent<DistanceJoint2D>();
+
+        //pm.enabled = true; //
+        hm.enabled = false; //
+
     }
 
     // Update is called once per frame
@@ -68,6 +80,19 @@ public class PlayerManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             GoToMainMenu();
+        }
+
+        if (joint.enabled)
+        {
+            //pm.enabled = false;
+            hm.enabled = true;
+        }
+
+        if (!joint.enabled)
+        {
+            //pm.enabled = true;
+            hm.enabled = false;
+            pm.Update();
         }
     }
 

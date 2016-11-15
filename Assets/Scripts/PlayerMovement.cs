@@ -2,7 +2,7 @@
 using System.Collections;
 
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement
 {
 
     public float speedX = 9.7f;
@@ -32,15 +32,18 @@ public class PlayerMovement : MonoBehaviour
     //Sounds 
     public AudioClip jumpLaunchSound;
     public AudioClip jumpLandSound;
-    new AudioSource audio;
+    private AudioSource audio;
+
+    private Transform transform;
     
 
     // Use this for initialization
-    void Start()
+    public PlayerMovement(AudioSource audio, Animator anim, ref Rigidbody2D rb, Transform transform)
     {
-        audio = GetComponent<AudioSource>();
-        anim = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
+        this.audio = audio;
+        this.anim = anim;
+        this.rb = rb;
+        this.transform = transform;
 
         facingRight = true;
 
@@ -53,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         anim.enabled = GameStatus.isGrounded;
 

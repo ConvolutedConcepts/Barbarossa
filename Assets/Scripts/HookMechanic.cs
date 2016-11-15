@@ -27,8 +27,7 @@ public class HookMechanic : MonoBehaviour {
     public AudioClip hookSound;
     public AudioSource audioSource;
 
-    private PlayerMovement pm;    //
-    private HookMovement hm;     //
+    private PlayerMovement pm;
 
     //Serves as maximum length for hook
     public float maxHookLength;
@@ -54,14 +53,8 @@ public class HookMechanic : MonoBehaviour {
         initDistanceJoint2d();
         initLineRenderer();
         initScriptVariables();
-        
 
-        //All below should be handeled in different script when possible
-        pm = GetComponent<PlayerMovement>(); //
-        hm = GetComponent<HookMovement>(); //
-
-        pm.enabled = true; //
-        hm.enabled = false; //
+        //pm = GetComponent<PlayerMovement>();
 	}
 
     //Initialize all variables used in this script
@@ -104,8 +97,8 @@ public class HookMechanic : MonoBehaviour {
         {
             if (getRayCastHit())
             {
-                pm.enabled = false; //
-                hm.enabled = true;  //
+                //pm.enabled = false; //
+                //hm.enabled = true;  //
                 
                 setLine();
                 setHook();
@@ -130,11 +123,7 @@ public class HookMechanic : MonoBehaviour {
         joint.enabled = false;
         line.enabled = false;
 
-        pm.enabled = true;  //
-        hm.enabled = false; //
-
-        pm.jump();
-        
+        //pm.jump();
     }
 
     //Cast ray for hook and return true only ifS it collides with a collider type component
