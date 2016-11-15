@@ -47,6 +47,8 @@ public class HookMechanic : MonoBehaviour {
     // Z Offset for line render
     public float lineRendererZOffset;
 
+    public bool jump;
+
 	// Use this for initialization
 	void Start () {
         setRepeatFunctions();
@@ -55,6 +57,7 @@ public class HookMechanic : MonoBehaviour {
         initScriptVariables();
 
         //pm = GetComponent<PlayerMovement>();
+        jump = false;
 	}
 
     //Initialize all variables used in this script
@@ -122,6 +125,7 @@ public class HookMechanic : MonoBehaviour {
         climb = false;
         joint.enabled = false;
         line.enabled = false;
+        jump = true;
 
         //pm.jump();
     }

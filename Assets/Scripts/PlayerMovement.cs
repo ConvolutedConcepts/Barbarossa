@@ -19,8 +19,7 @@ public class PlayerMovement
 
     bool rightKeyPressed;
     bool rightKeyReleased;
-
-    bool isPlayerFrozen;
+    
     bool needToZeroSpeed;
 
     // Variable to allow jump after jump button is released
@@ -48,8 +47,6 @@ public class PlayerMovement
         this.jumpLandSound = jumpLandSound;
 
         facingRight = true;
-
-        isPlayerFrozen = false;
         needToZeroSpeed = false;
 
         rb.freezeRotation = true;

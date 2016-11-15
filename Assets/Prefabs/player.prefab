@@ -333,6 +333,7 @@ MonoBehaviour:
   reelSpeed: 0
   minimumHookLength: 0.5
   lineRendererZOffset: -0.88
+  jump: 0
 --- !u!114 &114000011120977260
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -46,6 +46,7 @@ public class PlayerManager : MonoBehaviour
     private PlayerMovement pm;    //
     private HookMovement hm;     //
     private DistanceJoint2D joint;
+    private HookMechanic hookMech;
 
     void Awake()
     {
@@ -72,6 +73,8 @@ public class PlayerManager : MonoBehaviour
         //pm.enabled = true; //
         hm.enabled = false; //
 
+        hookMech = GetComponent<HookMechanic>();
+
     }
 
     // Update is called once per frame
@@ -90,6 +93,11 @@ public class PlayerManager : MonoBehaviour
 
         if (!joint.enabled)
         {
+            if (hookMech.jump)
+            {
+                pm.jump();
+                hookMech.jump = false;
+            }
             //pm.enabled = true;
             hm.enabled = false;
             pm.Update();
