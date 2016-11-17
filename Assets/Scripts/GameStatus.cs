@@ -3,6 +3,10 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 
 
+/// <summary>
+/// Script is used to keep track of all static values used across multiple scripts and manage level transitions
+/// </summary>
+
 public class GameStatus {
 
 	//Turn this off for PC/Mac Build
