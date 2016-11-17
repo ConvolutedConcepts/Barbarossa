@@ -25,8 +25,6 @@ public class LevelComplete : MonoBehaviour {
 		//Advance level #
 		GameStatus.currentLevel += 1;
 
-		//No gun at new level
-		GameStatus.isGunPickedUp = false;
 		//Refill jet fuel
 		GameStatus.fillAmount = 1; 
 		anim = GetComponent<Animator> ();
