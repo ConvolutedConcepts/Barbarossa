@@ -10,13 +10,7 @@ public class PlayerManager : MonoBehaviour
     private GameObject instantiateExplosion;
     Transform playerPosition;
 
-
     private GameObject Player;
-    //Bullet
-    public GameObject rightBullet;
-    public GameObject leftBullet;
-
-    Transform firePos;
 
     public Text scoreLabel;
 
@@ -25,33 +19,19 @@ public class PlayerManager : MonoBehaviour
     Animator anim;
     Rigidbody2D rb;
 
-    //Lives:
-    public GameObject live1;
-    public GameObject live2;
-    public GameObject live3;
     //Sounds 
-    public AudioClip jumpLaunchSound;
-    public AudioClip jumpLandSound;
     public AudioClip gemPickedUp;
-    public AudioClip gotSpecial;
     public AudioClip gotKey;
     public AudioClip walking;
     public AudioClip falling;
     public AudioClip dead;
     new AudioSource audio;
 
-    private Vector3 spown;
-
-    void Awake()
-    {
-        Player = gameObject;
-    }
-
     // Use this for initialization
     void Start()
     {
-        firePos = transform.FindChild("FirePosition");
-        spown = transform.position;
+        Player = gameObject;
+
         audio = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -89,16 +69,6 @@ public class PlayerManager : MonoBehaviour
     //If we touched ground allow jump and set the player to Idle mode
     void OnCollisionEnter2D(Collision2D other)
     {
-
-        if (other.gameObject.tag == "gun")
-        {
-            audio.PlayOneShot(gotSpecial, 0.8F);
-            Destroy(other.gameObject);
-            GameStatus.allowToFire = true;
-            GameStatus.isGunPickedUp = true;
-            return;
-        }
-
         if (other.gameObject.tag == "gem")
         {
             audio.PlayOneShot(gemPickedUp, 0.8F);
