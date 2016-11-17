@@ -79,8 +79,8 @@ GameObject:
   - 114: {fileID: 114000011762832702}
   - 232: {fileID: 232000010586310352}
   - 114: {fileID: 114000010051379028}
-  - 114: {fileID: 114000012846182022}
   - 114: {fileID: 114000013176277760}
+  - 114: {fileID: 114000014231411636}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -346,16 +346,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player_Explosion: {fileID: 0}
-  rightBullet: {fileID: 0}
-  leftBullet: {fileID: 0}
   scoreLabel: {fileID: 0}
-  live1: {fileID: 0}
-  live2: {fileID: 0}
-  live3: {fileID: 0}
-  jumpLaunchSound: {fileID: 8300000, guid: 6b01ec89375e2d9449bf3a89bfaa5a2f, type: 3}
-  jumpLandSound: {fileID: 8300000, guid: e5102d8c2a195fc4bb784786bab25e69, type: 3}
   gemPickedUp: {fileID: 0}
-  gotSpecial: {fileID: 0}
   gotKey: {fileID: 0}
   walking: {fileID: 0}
   falling: {fileID: 0}
@@ -376,20 +368,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   feet: {fileID: 4000012806318998}
---- !u!114 &114000012846182022
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012708375984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dfb3ab045cfd6b448b0301cdcc5b01f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drag: 0
-  maxSwingSpeed: 0
-  speedRampUp: 0
 --- !u!114 &114000013176277760
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -424,6 +402,20 @@ MonoBehaviour:
   mapY: 100
   targetOffsetX: 0
   targetOffsetY: 5
+--- !u!114 &114000014231411636
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012708375984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dfb3ab045cfd6b448b0301cdcc5b01f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drag: 0
+  maxSwingSpeed: 0
+  speedRampUp: 0
 --- !u!120 &120000014288509222
 LineRenderer:
   m_ObjectHideFlags: 1

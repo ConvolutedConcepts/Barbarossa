@@ -792,7 +792,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 1
+  m_UsedByEffector: 0
   m_Offset: {x: 19.094727, y: 17.372375}
   serializedVersion: 2
   m_Size: {x: 39.186386, y: 94.64112}

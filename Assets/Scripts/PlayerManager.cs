@@ -98,9 +98,26 @@ public class PlayerManager : MonoBehaviour
 
         if (other.gameObject.tag == "Door")
         {
+            loadNextLevel();
             return;
         }
 
+    }
+
+    void loadNextLevel()
+    {
+        if (GameStatus.currentLevel == 1)
+        {
+            SceneManager.LoadScene("Level2");
+            GameStatus.currentLevel = 2;
+        }
+
+        //Temp until decided where player will go after the end of level 2
+        else if (GameStatus.currentLevel == 2)
+        {
+            SceneManager.LoadScene("Level1");
+            GameStatus.currentLevel = 1;
+        }
     }
 
     void actionIfDead()
