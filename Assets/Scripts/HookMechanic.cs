@@ -69,7 +69,7 @@ public class HookMechanic : MonoBehaviour {
     {
         climb = false;
         hooked = false;
-        maxHookLength = 15;
+        maxHookLength = 17;
         minimumHookLength = .5f;
         reelSpeed = .5f;
         lineRendererZOffset = -1;

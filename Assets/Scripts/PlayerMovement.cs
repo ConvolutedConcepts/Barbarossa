@@ -50,6 +50,11 @@ public class PlayerMovement : MonoBehaviour
         rb.freezeRotation = true;
 
         canJump = true; // Initial state is able to jump
+
+        if (GameStatus.currentLevel == 1)
+            jumpHeight = 15;
+        else
+            jumpHeight = 25; 
     }
 
     // Update is called once per frame
