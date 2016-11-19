@@ -47,6 +47,7 @@ public class HookMechanic : MonoBehaviour {
 
     // Z Offset for line render
     public float lineRendererZOffset;
+    
 
 	// Use this for initialization
 	void Start () {
@@ -112,9 +113,15 @@ public class HookMechanic : MonoBehaviour {
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.W)) { climb = true; }
+        //Climb while w key is held or character is grounded but hooked. Stop climb w key is no longer held down and character is also no longer grounded but climb is still true
+        if (Input.GetKey(KeyCode.W) || GameStatus.isGrounded)
+            climb = true;
+        else if (climb) 
+            climb = false;
+        
+        //Stop climb if W key is released
+        if (Input.GetKeyUp(KeyCode.W)) { climb = false; }
 
-        if(Input.GetKeyUp(KeyCode.W)) { climb = false; }
 
         //While hook is attached, update line(rope) to move with player
         if (joint.enabled == true){ line.SetPosition(0, transform.position); }
@@ -182,7 +189,7 @@ public class HookMechanic : MonoBehaviour {
         if (newHookLength < minimumHookLength)
             joint.distance = minimumHookLength;
         else
-            joint.distance = newHookLength - .5f ;
+            joint.distance = newHookLength;
     }
 
     //Reel in the hero till minimumHookLength is reached
