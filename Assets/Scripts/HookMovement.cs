@@ -13,8 +13,8 @@ public class HookMovement : MonoBehaviour {
 	void Start () {
         rb = GetComponent <Rigidbody2D>();
         drag = .5f;
-        maxSwingSpeed = 20f;
-        speedRampUp = 7.5f;
+        maxSwingSpeed = 100f;
+        speedRampUp = 13.5f;
 	}
 	
 	// Update is called once per frame
