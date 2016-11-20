@@ -88,6 +88,10 @@ public class PlayerManager : MonoBehaviour
             return;
         }
 
+        if(other.gameObject.layer == LayerMask.NameToLayer("Abyss"))
+        {
+            fallInAbyss(other);
+        }
 
         if (other.gameObject.tag == "key")
         {
@@ -106,7 +110,15 @@ public class PlayerManager : MonoBehaviour
 
     }
 
-
+    void fallInAbyss(Collision2D other)
+    {
+        Physics2D.IgnoreCollision(other.collider, GetComponent< Collider2D >());
+        GameStatus.falling = true;
+        var target = GameObject.Find("Camera");
+        CameraFollow cf = GetComponentInChildren<CameraFollow>();
+        //cf.enabled = false;
+        Camera c = GetComponentInChildren<Camera>();
+    }
 
 
 

@@ -19,6 +19,8 @@ public class GameStatus {
 
 	public static float fillAmount = 1;
 
+    public static bool falling = false;
+
 	//Check if we on the ground to prevent double jump
 	public static bool isGrounded = false;
 
@@ -37,15 +39,10 @@ public class GameStatus {
     public static void loadNextLevel()
     {
         if (GameStatus.currentLevel == 1)
-        {
             GoToLevel_2();
-        }
-
-        //Temp until decided where player will go after the end of level 2
+        
         else if (GameStatus.currentLevel == 2)
-        {
-            GoToLevel_1();
-        }
+            GoToCredits();
     }
 
     public static void GoToLevel_1()
