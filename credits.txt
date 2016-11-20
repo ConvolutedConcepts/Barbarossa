@@ -1,0 +1,43 @@
+Cave Escape: Barbarossa's Revenge
+
+by
+
+Convoluted Concepts
+{logo}
+
+Design
+Keyvan Fatehi
+
+Writing
+Almara
+
+Art
+{names}
+
+Animation
+{names}
+
+Programming
+Keyvan Fatehi
+
+Sound
+Keyvan Fatehi
+
+Testing
+Keyvan Fatehi
+
+Special Thanks
+
+Art
+
+pixelartm
+http://opengameart.org/content/pirate-1
+
+Sounds
+
+makbulchowdhury
+https://www.freesound.org/people/makbulchowdhury/sounds/172450/
+
+Jaypeex
+https://www.freesound.org/people/Jaypeex/sounds/110385/
+
