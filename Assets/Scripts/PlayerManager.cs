@@ -88,6 +88,7 @@ public class PlayerManager : MonoBehaviour
             return;
         }
 
+
         if (other.gameObject.tag == "key")
         {
             //GameObject.Find ("Level1_C_Text").SetActive (false);
@@ -104,6 +105,8 @@ public class PlayerManager : MonoBehaviour
         }
 
     }
+
+
 
 
 
