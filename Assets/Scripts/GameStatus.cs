@@ -26,8 +26,12 @@ public class GameStatus {
 		SceneManager.LoadScene ("Level1");
 	}
 
-	public void GoToMainMenuScreen() {
+	public static void GoToMainMenuScreen() {
 		SceneManager.LoadScene ("Main_Menu");
+	}
+
+	public static void GoToCredits() {
+		SceneManager.LoadScene ("Credits");
 	}
 
     public static void loadNextLevel()
