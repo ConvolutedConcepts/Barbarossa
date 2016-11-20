@@ -65,6 +65,13 @@ public class PlayerManager : MonoBehaviour
         {
             actionIfDead();
         }
+
+        if(c.gameObject.layer == LayerMask.NameToLayer("Abyss"))
+        {
+            Debug.Log("Entered");
+            fallInAbyss(c);
+
+        }
     }
 
     //If we touched ground allow jump and set the player to Idle mode
@@ -88,11 +95,6 @@ public class PlayerManager : MonoBehaviour
             return;
         }
 
-        if(other.gameObject.layer == LayerMask.NameToLayer("Abyss"))
-        {
-            fallInAbyss(other);
-        }
-
         if (other.gameObject.tag == "key")
         {
             //GameObject.Find ("Level1_C_Text").SetActive (false);
@@ -110,9 +112,9 @@ public class PlayerManager : MonoBehaviour
 
     }
 
-    void fallInAbyss(Collision2D other)
+    void fallInAbyss(Collider2D other)
     {
-        Physics2D.IgnoreCollision(other.collider, GetComponent< Collider2D >());
+        //Physics2D.IgnoreCollision(other.collider, GetComponent< Collider2D >());
         GameStatus.falling = true;
         var target = GameObject.Find("Camera");
         CameraFollow cf = GetComponentInChildren<CameraFollow>();
