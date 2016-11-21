@@ -19,8 +19,6 @@ public class GameStatus {
 
 	public static float fillAmount = 1;
 
-    public static bool falling = false;
-
 	//Check if we on the ground to prevent double jump
 	public static bool isGrounded = false;
 

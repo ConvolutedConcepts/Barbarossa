@@ -68,9 +68,7 @@ public class PlayerManager : MonoBehaviour
 
         if(c.gameObject.layer == LayerMask.NameToLayer("Abyss"))
         {
-            Debug.Log("Entered");
             fallInAbyss(c);
-
         }
     }
 
@@ -135,12 +133,12 @@ public class PlayerManager : MonoBehaviour
 
     void fallInAbyss(Collider2D other)
     {
-        //Physics2D.IgnoreCollision(other.collider, GetComponent< Collider2D >());
-        GameStatus.falling = true;
-        var target = GameObject.Find("Camera");
-        CameraFollow cf = GetComponentInChildren<CameraFollow>();
-        //cf.enabled = false;
-        Camera c = GetComponentInChildren<Camera>();
+        audio.PlayOneShot(falling, 0.8F);
+        StartCoroutine(wait(1));
+        PlayerMovement pm = GetComponent<PlayerMovement>();
+        pm.enabled = false;
+        HookMechanic hm = GetComponent<HookMechanic>();
+        hm.enabled = false;
     }
 
 
