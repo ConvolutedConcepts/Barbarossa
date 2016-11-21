@@ -86,7 +86,12 @@ public class PlayerManager : MonoBehaviour
             return;
         }
 
-        if (other.gameObject.tag == "enemy" ||
+        if(other.gameObject.layer == LayerMask.NameToLayer("Hazard") && other.gameObject.tag == "Spike")
+        {
+            spikeDeath();
+        }
+
+        else if (other.gameObject.tag == "enemy" ||
             other.gameObject.tag == "Hazard" ||
             other.gameObject.layer == LayerMask.NameToLayer("Hazard")
         )
@@ -110,6 +115,22 @@ public class PlayerManager : MonoBehaviour
             return;
         }
 
+    }
+
+    void spikeDeath()
+    {
+        audio.PlayOneShot(dead, 0.8F);
+        StartCoroutine(wait(1));
+        PlayerMovement pm = GetComponent<PlayerMovement>();
+        pm.enabled = false;
+        HookMechanic hm = GetComponent<HookMechanic>();
+        hm.enabled = false;
+    }
+
+    IEnumerator wait(int seconds)
+    {
+        yield return new WaitForSecondsRealtime(seconds);
+        actionIfDead();
     }
 
     void fallInAbyss(Collider2D other)
