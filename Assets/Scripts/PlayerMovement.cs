@@ -51,10 +51,11 @@ public class PlayerMovement : MonoBehaviour
 
         canJump = true; // Initial state is able to jump
 
-        if (GameStatus.currentLevel == 1)
-            jumpHeight = 15;
-        else
-            jumpHeight = 25; 
+		//NEVER DO THIS IN CODE NEVER!!
+//        if (GameStatus.currentLevel == 1)
+//            jumpHeight = 15;
+//        else
+//            jumpHeight = 25; 
     }
 
     // Update is called once per frame
@@ -135,9 +136,11 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void JumpButtonPressed()
-    {
-        if (GameStatus.isGrounded)
-            jump();
+	{ print ("i am in jump method");
+		if (GameStatus.isGrounded) {
+			print ("i have to jump");
+			jump ();
+		}
     }
 
     public void jump()
