@@ -7,7 +7,7 @@ public class CameraFollow : MonoBehaviour {
 	public Transform target;
 
 	// the camera distance (z position)
-	public float distance = 0f;
+	public float distance = -10f;
 
 	// the height the camera should be above the target (AKA player)
 	public float height = 0f;
@@ -18,10 +18,6 @@ public class CameraFollow : MonoBehaviour {
 	// map maximum X and Y coordinates. (the final boundaries of your map/level)
 	public float mapX = 100.0f;
 	public float mapY = 100.0f;
-
-    // Target Offset X and Y Coords
-    public float targetOffsetX = 0.0f;
-    public float targetOffsetY = 0.0f;
 
 	// just private var for the map boundaries
 	private float minX = 0f;
@@ -43,19 +39,13 @@ public class CameraFollow : MonoBehaviour {
 		// get the position of the target (AKA player)
 		Vector3 wantedPosition = target.TransformPoint(0, height, distance);
 
-        wantedPosition.x += targetOffsetX;
-        wantedPosition.y += targetOffsetY;
-        /*
 		// check if it's inside the boundaries on the X position
 		wantedPosition.x = (wantedPosition.x < minX) ? minX : wantedPosition.x;
 		wantedPosition.x = (wantedPosition.x > maxX) ? maxX : wantedPosition.x;
 
-
 		// check if it's inside the boundaries on the Y position
 		wantedPosition.y = (wantedPosition.y < minY) ? minY : wantedPosition.y;
 		wantedPosition.y = (wantedPosition.y > maxY) ? maxY : wantedPosition.y;
-        */
-        
 
 		// set the camera to go to the wanted position in a certain amount of time
 		transform.position = Vector3.Lerp (transform.position, wantedPosition, (Time.deltaTime * damping));
