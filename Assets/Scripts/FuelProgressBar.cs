@@ -11,6 +11,8 @@ public class FuelProgressBar : MonoBehaviour {
 	[SerializeField]
 	private Image blackRect;
 	// Use this for initialization
+	public int decSpeed = 0; // Set it to whatever. Min 100 for now
+		
 	void Start () {
 		blackRect.fillAmount = 0;
 	}
@@ -20,6 +22,6 @@ public class FuelProgressBar : MonoBehaviour {
 		HandleBar ();
 	}
 	private void HandleBar() {
-		blackRect.fillAmount += Time.deltaTime / 100 ;
+		blackRect.fillAmount += Time.deltaTime / decSpeed;
 	}
 }

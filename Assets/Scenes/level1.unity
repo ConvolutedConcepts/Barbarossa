@@ -486,6 +486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fillAmount: 0
   blackRect: {fileID: 1549077089}
+  decSpeed: 100
 --- !u!1 &1549077087
 GameObject:
   m_ObjectHideFlags: 0
