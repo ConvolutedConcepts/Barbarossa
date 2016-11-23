@@ -168,7 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fillAmount: 0
   blackRect: {fileID: 114000012021701768}
-  decSpeed: 0
+  decSpeed: 100
 --- !u!222 &222000012831275266
 CanvasRenderer:
   m_ObjectHideFlags: 1
