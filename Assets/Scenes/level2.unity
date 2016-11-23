@@ -125,8 +125,8 @@ MonoBehaviour:
   distance: -10
   height: 0
   damping: 5
-  mapX: 100
-  mapY: 100
+  mapX: 2760
+  mapY: 10
 --- !u!81 &78862134
 AudioListener:
   m_ObjectHideFlags: 0
@@ -189,7 +189,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 78862132}
   m_LocalRotation: {x: -0, y: -0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.47, y: -14.4, z: -10}
+  m_LocalPosition: {x: 25.8, y: -14.4, z: -10}
   m_LocalScale: {x: -0.8, y: 0.8, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
