@@ -145,6 +145,7 @@ public class PlayerManager : MonoBehaviour
 
     void actionIfDead()
     {
+        GameStatus.currentLevel = 1;
         SceneManager.LoadScene("Level1");
     }
 
