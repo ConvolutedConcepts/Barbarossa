@@ -376,7 +376,7 @@ GameObject:
   - 68: {fileID: 68000014292394498}
   - 68: {fileID: 68000012181373028}
   - 68: {fileID: 68000012654960000}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wallCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
