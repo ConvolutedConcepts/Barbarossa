@@ -153,7 +153,7 @@ public class HookMechanic : MonoBehaviour {
         //Shoots ray to where mouse clicked and detects if it hits an object along the way
         hit = Physics2D.Raycast(transform.position, targetPos - transform.position, maxHookLength, mask);
 
-        return hit.collider != null && hit.collider.gameObject.GetComponent<Collider2D>() != null;
+        return hit.collider != null && hit.collider.gameObject.GetComponent<Collider2D>() != null && hit.collider.gameObject.layer != LayerMask.NameToLayer("Ground");
     }
 
     //Set LineRenderer component with hit point from raycast
