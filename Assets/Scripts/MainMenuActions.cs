@@ -4,7 +4,7 @@ public class MainMenuActions : MonoBehaviour
 {
     public void newGame()
     {
-        GameStatus.GoToLevel_1();
+        GameStatus.GoToDiary();
     }
     public void loadCredits()
     {

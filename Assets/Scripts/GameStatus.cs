@@ -30,6 +30,11 @@ public class GameStatus {
 		SceneManager.LoadScene ("Main_Menu");
 	}
 
+    public static void GoToDiary()
+    {
+        SceneManager.LoadScene("Diary");
+    }
+
 	public static void GoToCredits() {
 		SceneManager.LoadScene ("Credits");
 	}
