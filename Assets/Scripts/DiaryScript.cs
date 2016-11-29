@@ -3,6 +3,7 @@ using System.Collections;
 
 public class DiaryScript : MonoBehaviour {
     int page_num;
+    GameObject button;
     public GameObject diaryPage0;
     public GameObject diaryPage1;
     public GameObject diaryPage2;
@@ -13,7 +14,8 @@ public class DiaryScript : MonoBehaviour {
     // Use this for initialization
     void Start () {
         page_num = 0;
-	}
+        button = GameObject.Find("Button");
+    }
 	
     public void nextPage()
     {
