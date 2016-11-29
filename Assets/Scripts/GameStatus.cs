@@ -27,15 +27,18 @@ public class GameStatus {
 	}
 
 	public static void GoToMainMenuScreen() {
+        currentLevel = 1;
 		SceneManager.LoadScene ("Main_Menu");
 	}
 
     public static void GoToDiary()
     {
+        currentLevel = 1;
         SceneManager.LoadScene("Diary");
     }
 
 	public static void GoToCredits() {
+        currentLevel = 1;
 		SceneManager.LoadScene ("Credits");
 	}
 
@@ -43,8 +46,11 @@ public class GameStatus {
     {
         if (GameStatus.currentLevel == 1)
             GoToLevel_2();
-        
+
         else if (GameStatus.currentLevel == 2)
+            GoToLevel_3();
+
+        else if (GameStatus.currentLevel == 3)
             GoToCredits();
     }
 
