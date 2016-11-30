@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Door
   - Hazard
+  - Death
   layers:
   - Default
   - TransparentFX

@@ -54,14 +54,7 @@ public class PlayerManager : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D c)
     {
-
-        if (c.gameObject.tag == "monster_bullet")
-        {
-            actionIfDead();
-            Destroy(c.gameObject);
-        }
-
-        if (c.gameObject.tag == "Hazard")
+        if (c.gameObject.tag == "Death")
         {
             actionIfDead();
         }
@@ -84,18 +77,9 @@ public class PlayerManager : MonoBehaviour
             return;
         }
 
-        if(other.gameObject.layer == LayerMask.NameToLayer("Hazard") && other.gameObject.tag == "Spike")
+        if(other.gameObject.tag == "Death")
         {
-            spikeDeath();
-        }
-
-        else if (other.gameObject.tag == "enemy" ||
-            other.gameObject.tag == "Hazard" ||
-            other.gameObject.layer == LayerMask.NameToLayer("Hazard")
-        )
-        {
-            actionIfDead();
-            return;
+            death();
         }
 
         if (other.gameObject.tag == "key")
@@ -115,14 +99,20 @@ public class PlayerManager : MonoBehaviour
 
     }
 
-    void spikeDeath()
+    void death()
     {
+        stopMovement();
         audio.PlayOneShot(dead, 0.8F);
         StartCoroutine(wait(1));
-        PlayerMovement pm = GetComponent<PlayerMovement>();
-        pm.enabled = false;
-        HookMechanic hm = GetComponent<HookMechanic>();
-        hm.enabled = false;
+    }
+
+
+    void fallInAbyss(Collider2D other)
+    {
+        stopMovement();
+        audio.PlayOneShot(falling, 0.8F);
+        StartCoroutine(wait(1));
+
     }
 
     IEnumerator wait(int seconds)
@@ -131,10 +121,9 @@ public class PlayerManager : MonoBehaviour
         actionIfDead();
     }
 
-    void fallInAbyss(Collider2D other)
+
+    void stopMovement()
     {
-        audio.PlayOneShot(falling, 0.8F);
-        StartCoroutine(wait(1));
         PlayerMovement pm = GetComponent<PlayerMovement>();
         pm.enabled = false;
         HookMechanic hm = GetComponent<HookMechanic>();
