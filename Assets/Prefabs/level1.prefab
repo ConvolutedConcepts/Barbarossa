@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011357401298}
   - 61: {fileID: 61000012857568848}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Abyss
   m_TagString: Hazard
   m_Icon: {fileID: 0}
