@@ -127,7 +127,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010706226368}
   - 68: {fileID: 68000010641703098}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: seafloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,22 +169,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1000011818310368
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 4000011357401298}
-  - 61: {fileID: 61000012857568848}
-  m_Layer: 11
-  m_Name: Abyss
-  m_TagString: Hazard
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1000011886690854
 GameObject:
   m_ObjectHideFlags: 1
@@ -218,6 +202,22 @@ GameObject:
   - 114: {fileID: 114000012773113448}
   m_Layer: 8
   m_Name: generic_platformer_tiles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000012963610988
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000014116454576}
+  - 61: {fileID: 61000010434749468}
+  m_Layer: 0
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -372,19 +372,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000014264884592}
   m_RootOrder: 1
---- !u!4 &4000011357401298
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011818310368}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 4000011786935620}
-  m_RootOrder: 6
 --- !u!4 &4000011429473186
 Transform:
   m_ObjectHideFlags: 1
@@ -415,7 +402,6 @@ Transform:
   - {fileID: 4000014009989334}
   - {fileID: 4000011882673008}
   - {fileID: 4000012843724514}
-  - {fileID: 4000011357401298}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &4000011882673008
@@ -486,6 +472,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000011786935620}
   m_RootOrder: 3
+--- !u!4 &4000014116454576
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012963610988}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2114.2, y: -639.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000014264884592}
+  m_RootOrder: 3
 --- !u!4 &4000014162299978
 Transform:
   m_ObjectHideFlags: 1
@@ -514,6 +513,7 @@ Transform:
   - {fileID: 4000012146426890}
   - {fileID: 4000011323794860}
   - {fileID: 4000010706226368}
+  - {fileID: 4000014116454576}
   m_Father: {fileID: 4000011786935620}
   m_RootOrder: 2
 --- !u!23 &23000010257341504
@@ -782,6 +782,20 @@ CircleCollider2D:
   m_Offset: {x: 1392, y: -635}
   serializedVersion: 2
   m_Radius: 23.16
+--- !u!61 &61000010434749468
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012963610988}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: fabc49fda0f624e4db267f1550f33f8b, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 13.89502, y: 317.6153}
+  serializedVersion: 2
+  m_Size: {x: 28.787472, y: 636.23334}
 --- !u!61 &61000010501689654
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -796,20 +810,6 @@ BoxCollider2D:
   m_Offset: {x: 19.094727, y: 17.372375}
   serializedVersion: 2
   m_Size: {x: 39.186386, y: 94.64112}
---- !u!61 &61000012857568848
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011818310368}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 184.57767, y: -1057.9187}
-  serializedVersion: 2
-  m_Size: {x: 398.69547, y: 116.74252}
 --- !u!68 &68000010641703098
 EdgeCollider2D:
   m_ObjectHideFlags: 1
@@ -819,7 +819,7 @@ EdgeCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
