@@ -13,7 +13,7 @@ public class GameStatus {
 	public static bool isDeployedToMobile = true;
 
 
-	public static int score = 0;
+	public static int coins = 0;
 	public static int currentLevel = 1;
 	public static int lives = 3;
 

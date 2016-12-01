@@ -12,15 +12,11 @@ public class PlayerManager : MonoBehaviour
 
     private GameObject Player;
 
-    public Text scoreLabel;
-
-    bool hasKey;
-
     Animator anim;
     Rigidbody2D rb;
 
     //Sounds 
-    public AudioClip gemPickedUp;
+    public AudioClip coinPickedUp;
     public AudioClip gotKey;
     public AudioClip walking;
     public AudioClip falling;
@@ -36,8 +32,6 @@ public class PlayerManager : MonoBehaviour
         audio = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-
-        hasKey = false;
 
         rb.freezeRotation = true;
 
@@ -63,32 +57,30 @@ public class PlayerManager : MonoBehaviour
         {
             fallInAbyss(c);
         }
+
+        if(c.gameObject.tag == "Coin")
+        {
+            //audio.PlayOneShot(coinPickedUp, 0.8F);
+            Destroy(c.gameObject);
+            GameStatus.coins += 1;
+        }
     }
 
     //If we touched ground allow jump and set the player to Idle mode
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "gem")
-        {
-            audio.PlayOneShot(gemPickedUp, 0.8F);
-            Destroy(other.gameObject);
-            GameStatus.score += 100;
-            scoreLabel.text = GameStatus.score.ToString();
-            return;
-        }
+        //if (other.gameObject.tag == "gem")
+        //{
+        //    audio.PlayOneShot(gemPickedUp, 0.8F);
+        //    Destroy(other.gameObject);
+        //    GameStatus.score += 100;
+        //    scoreLabel.text = GameStatus.score.ToString();
+        //    return;
+        //}
 
         if(other.gameObject.tag == "Death")
         {
             death();
-        }
-
-        if (other.gameObject.tag == "key")
-        {
-            //GameObject.Find ("Level1_C_Text").SetActive (false);
-            audio.PlayOneShot(gotKey, 0.7F);
-            hasKey = true;
-            Destroy(other.gameObject);
-            return;
         }
 
         if (other.gameObject.tag == "Door")

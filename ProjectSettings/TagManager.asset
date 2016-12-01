@@ -7,6 +7,7 @@ TagManager:
   - Door
   - Hazard
   - Death
+  - Coin
   layers:
   - Default
   - TransparentFX
