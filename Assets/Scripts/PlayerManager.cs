@@ -61,7 +61,8 @@ public class PlayerManager : MonoBehaviour
 
         if(c.gameObject.tag == "Coin")
         {
-            //audio.PlayOneShot(coinPickedUp, 0.8F);
+            print(coinPickedUp);
+            audio.PlayOneShot(coinPickedUp, 1F);
             Destroy(c.gameObject);
             GameStatus.coins += 1;
 			scoreText.text = GameStatus.coins.ToString();
