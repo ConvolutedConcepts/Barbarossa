@@ -10,4 +10,8 @@ public class MainMenuActions : MonoBehaviour
     {
         GameStatus.GoToCredits();
     }
+	public void quitGame()
+	{
+		Application.Quit ();
+	}
 }
