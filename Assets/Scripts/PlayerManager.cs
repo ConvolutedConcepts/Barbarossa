@@ -132,6 +132,7 @@ public class PlayerManager : MonoBehaviour
         GameStatus.currentLevel = 1;
         SceneManager.LoadScene("Level1");
 		GameStatus.coins = 0;
+		GameStatus.healthBarAmount = 0;
     }
 
     public void GoToMainMenu()

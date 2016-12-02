@@ -12,7 +12,7 @@ public class GameStatus {
 	//Turn this off for PC/Mac Build
 	public static bool isDeployedToMobile = true;
 
-
+	public static float healthBarAmount = 0;
 	public static int coins = 0;
 	public static int currentLevel = 1;
 	public static int lives = 3;

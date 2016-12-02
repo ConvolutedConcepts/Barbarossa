@@ -14,7 +14,7 @@ public class FuelProgressBar : MonoBehaviour {
 	public int decSpeed = 0; // Set it to whatever. Min 100 for now
 		
 	void Start () {
-		blackRect.fillAmount = 0;
+		blackRect.fillAmount = GameStatus.healthBarAmount;
 	}
 	
 	// Update is called once per frame
@@ -23,5 +23,7 @@ public class FuelProgressBar : MonoBehaviour {
 	}
 	private void HandleBar() {
 		blackRect.fillAmount += Time.deltaTime / decSpeed;
+		GameStatus.healthBarAmount = blackRect.fillAmount;
+			
 	}
 }
