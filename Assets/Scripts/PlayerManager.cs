@@ -21,6 +21,7 @@ public class PlayerManager : MonoBehaviour
     public AudioClip walking;
     public AudioClip falling;
     public AudioClip dead;
+	public Text scoreText;
     new AudioSource audio;
 
 
@@ -63,6 +64,8 @@ public class PlayerManager : MonoBehaviour
             //audio.PlayOneShot(coinPickedUp, 0.8F);
             Destroy(c.gameObject);
             GameStatus.coins += 1;
+			scoreText.text = GameStatus.coins.ToString();
+
         }
     }
 
