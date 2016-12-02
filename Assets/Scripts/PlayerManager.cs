@@ -29,7 +29,7 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         Player = gameObject;
-
+		scoreText.text = GameStatus.coins.ToString();
         audio = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -131,6 +131,7 @@ public class PlayerManager : MonoBehaviour
     {
         GameStatus.currentLevel = 1;
         SceneManager.LoadScene("Level1");
+		GameStatus.coins = 0;
     }
 
     public void GoToMainMenu()
