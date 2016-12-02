@@ -54,9 +54,19 @@ Programmer16 (opengameart.org)
 
 Bartek Ambrozik (freeimages.com)
 
+surt - Generic Platformer Tiles (http://opengameart.org/content/generic-platformer-tiles)
 
+greggman - Platformer Tilesets (http://opengameart.org/content/platformer-tilesets)
 
+Blarumyrran - Treasure chests, 32x32 and 16x16 (http://opengameart.org/content/treasure-chests-32x32-and-16x16)
 
+NenadSimic - Picked Coin Echo (http://opengameart.org/content/picked-coin-echo)
+
+Tozan - Level 1 Music: Casket (http://opengameart.org/content/casket)
+
+isaiah658 - Level 2 Music: Dark Rooms and Scary Things (http://opengameart.org/content/dark-rooms-and-scary-things)
+
+Joth - Level 3 Music: Near and Far (http://opengameart.org/content/near-and-far)
 
 
 
