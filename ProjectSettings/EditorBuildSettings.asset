@@ -17,3 +17,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Diary.unity
   - enabled: 1
     path: Assets/Scenes/level3.unity
+  - enabled: 1
+    path: Assets/Scenes/FinalDiaryPage.unity

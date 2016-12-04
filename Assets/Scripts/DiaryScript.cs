@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class DiaryScript : MonoBehaviour {
-    int page_num;
+    static int page_num;
     GameObject button;
     public GameObject diaryPage0;
     public GameObject diaryPage1;

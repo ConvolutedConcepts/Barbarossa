@@ -51,7 +51,7 @@ public class GameStatus {
             GoToLevel_3();
 
         else if (GameStatus.currentLevel == 3)
-            GoToCredits();
+            SceneManager.LoadScene("FinalDiaryPage");
     }
 
     public static void GoToLevel_1()
