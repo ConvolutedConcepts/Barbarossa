@@ -24,6 +24,7 @@ public class PlayerManager : MonoBehaviour
 	public Text scoreText;
     new AudioSource audio;
 
+    private bool isDead;
 
     // Use this for initialization
     void Start()
@@ -36,6 +37,8 @@ public class PlayerManager : MonoBehaviour
 
         rb.freezeRotation = true;
 
+        isDead = false;
+
     }
 
     // Update is called once per frame
@@ -44,6 +47,12 @@ public class PlayerManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             GoToMainMenu();
+        }
+
+        if (GameStatus.healthBarAmount == 1 && !isDead)
+        {
+            isDead = true;
+            death();
         }
     }
 
@@ -124,6 +133,11 @@ public class PlayerManager : MonoBehaviour
         pm.enabled = false;
         HookMechanic hm = GetComponent<HookMechanic>();
         hm.enabled = false;
+        hm.line.enabled = false;
+        DistanceJoint2D joint = GetComponent<DistanceJoint2D>();
+        joint.enabled = false;
+        Animator anim = GetComponent<Animator>();
+        anim.enabled = false;
     }
 
 

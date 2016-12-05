@@ -195,7 +195,7 @@ public class HookMechanic : MonoBehaviour {
     //Reel in the hero till minimumHookLength is reached
     void reelIn()
     {
-        if (climb && joint.distance > minimumHookLength)
+        if ((climb && joint.distance > minimumHookLength) || joint.distance > maxHookLength)
         {
             if (joint.distance - reelSpeed < minimumHookLength)
                 joint.distance = minimumHookLength;
