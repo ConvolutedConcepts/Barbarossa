@@ -8,6 +8,8 @@ public class HookMovement : MonoBehaviour {
     public float maxSwingSpeed;
     private Vector2 null_speed = new Vector2(0, 0);
     public float speedRampUp;
+    private bool swingLeft;
+    private bool swingRight;
 
 	// Use this for initialization
 	void Start () {
@@ -15,16 +17,20 @@ public class HookMovement : MonoBehaviour {
         drag = .5f;
         maxSwingSpeed = 100f;
         speedRampUp = 13.5f;
+        swingLeft = false;
+        swingRight = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
         if (enabled) { rb.drag = drag; }
+        setBoolSwing();
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            if (rb.velocity.x < 0 || rb.velocity == null_speed)
+            if ((rb.velocity.x < 0 || rb.velocity == null_speed) && swingLeft)
             {
+                swingLeft = false;
                 rb.velocity = new Vector2(rb.velocity.x + -speedRampUp, 0);
                 if(rb.velocity.x < -maxSwingSpeed)
                 {
@@ -35,8 +41,9 @@ public class HookMovement : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.D))
         {
-            if (rb.velocity.x >= 0 || rb.velocity == null_speed)
+            if ((rb.velocity.x >= 0 || rb.velocity == null_speed) && swingRight)
             {
+                swingRight = false;
                 rb.velocity = new Vector2(rb.velocity.x + speedRampUp, 0);
                 if (rb.velocity.x > maxSwingSpeed)
                 {
@@ -45,4 +52,12 @@ public class HookMovement : MonoBehaviour {
             }
         }
 	}
+
+    void setBoolSwing()
+    {
+        if (rb.velocity.x < 0)
+            swingRight = true;
+        else if (rb.velocity.x > 0)
+            swingLeft = true;
+    }
 }
