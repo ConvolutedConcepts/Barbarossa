@@ -124,7 +124,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -1727}
-  m_SizeDelta: {x: 944.64, y: 2653.72}
+  m_SizeDelta: {x: 944.64, y: 4880}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &17583340
 MonoBehaviour:
@@ -158,12 +158,110 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 2.19
-  m_Text: "Cave Escape: Barbarossa's Revenge\r\n\r\n\r\n\r\n\r\nby\r\nConvoluted Concepts\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nDesigners:
-    Jerrid, Shawn, Almara, Yaro, Keyvan\r\n\r\nWriters: Almara, Jerrid, Shawn\r\n\r\nArtists:
-    Jerrid, Almara\r\n\r\nAnimators: Yaro\r\n\r\nProgrammers: Yaro, Keyvan, Shawn\r\n\r\nSound
-    Designers: Keyvan\r\n\r\n=== Special Thanks ===\r\n\r\npixelartm (opengameart.org)\r\n\r\nmakbulchowdhury
-    (freesound.org)\r\n\r\nJaypeex (freesound.org)\r\n\r\nTheAtomicBrain (freesound.org)\r\n\r\nShadyDave
-    (freesound.org)"
+  m_Text: 'Cave Escape: Barbarossa''s Revenge
+
+
+
+
+
+    by
+
+    Convoluted Concepts
+
+
+
+
+
+
+
+
+    Designers: Jerrid, Shawn, Almara, Yaro, Keyvan
+
+
+    Writers: Almara, Jerrid, Shawn
+
+
+    Artists: Jerrid, Almara
+
+
+    Animators: Yaro
+
+
+    Programmers: Yaro, Keyvan, Shawn
+
+
+    Sound Designers: Keyvan
+
+
+    === Special Thanks ===
+
+
+    pixelartm (opengameart.org)
+
+
+    makbulchowdhury (freesound.org)
+
+
+    Jaypeex (freesound.org)
+
+
+    TheAtomicBrain (freesound.org)
+
+
+    ShadyDave (freesound.org)
+
+
+    LittleRobotSoundFactory (freesound.org)
+
+
+    Superb Wallpapers
+
+
+    Buch (opengameart.org)
+
+
+    Trent Gamblin (opengameart.org)
+
+
+    Cliipso (opengameart.org)
+
+
+    truezipp (opengameart.org)
+
+
+    tgfcoder (opengameart.org)
+
+
+    Programmer16 (opengameart.org)
+
+
+    Bartek Ambrozik (freeimages.com)
+
+
+    surt - Generic Platformer Tiles (http://opengameart.org/content/generic-platformer-tiles)
+
+
+    greggman - Platformer Tilesets (http://opengameart.org/content/platformer-tilesets)
+
+
+    Blarumyrran - Treasure chests, 32x32 and 16x16 (http://opengameart.org/content/treasure-chests-32x32-and-16x16)
+
+
+    NenadSimic - Picked Coin Echo (http://opengameart.org/content/picked-coin-echo)
+
+
+    Tozan - Level 1 Music: Casket (http://opengameart.org/content/casket)
+
+
+    isaiah658 - Level 2 Music: Dark Rooms and Scary Things (http://opengameart.org/content/dark-rooms-and-scary-things)
+
+
+    Joth - Level 3 Music: Near and Far (http://opengameart.org/content/near-and-far)
+
+
+
+
+'
 --- !u!222 &17583341
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -214,7 +312,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1034}
+  m_AnchoredPosition: {x: 0, y: 76}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &42829410
@@ -607,7 +705,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -14}
+  m_AnchoredPosition: {x: 0, y: -1122.7}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1990106929
